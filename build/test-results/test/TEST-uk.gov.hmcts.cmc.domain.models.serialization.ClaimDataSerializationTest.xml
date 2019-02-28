@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uk.gov.hmcts.cmc.domain.models.serialization.ClaimDataSerializationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-28T14:34:26" hostname="UKLOMACAGYT01.local" time="0.871">
+  <properties/>
+  <testcase name="shouldConvertJsonToJava" classname="uk.gov.hmcts.cmc.domain.models.serialization.ClaimDataSerializationTest" time="0.871"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
