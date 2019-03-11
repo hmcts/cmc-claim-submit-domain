@@ -165,7 +165,7 @@ public class ClaimDataTest {
 
         Set<String> errors = validate(claimData);
 
-        assertThat(errors).containsOnly("claimants[0].address : may not be null");
+        assertThat(errors).containsOnly("claimants[0].address : must not be null");
     }
 
     @Test

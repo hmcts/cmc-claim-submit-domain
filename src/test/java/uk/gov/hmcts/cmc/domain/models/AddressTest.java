@@ -131,7 +131,7 @@ public class AddressTest {
         //then
         assertThat(errors)
             .hasSize(1)
-            .contains("postcode : may not be null");
+            .contains("postcode : must not be null");
     }
 
     @Test

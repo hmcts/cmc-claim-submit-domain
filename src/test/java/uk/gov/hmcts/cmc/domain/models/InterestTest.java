@@ -33,7 +33,7 @@ public class InterestTest {
         Set<String> errors = validate(interest);
         //then
         assertThat(errors)
-                .containsExactly("type : may not be null");
+                .containsExactly("type : must not be null");
     }
 
     @Test

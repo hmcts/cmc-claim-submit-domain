@@ -31,7 +31,7 @@ public class InterestBreakdownTest {
 
         Set<String> validationErrors = validate(interestBreakdown);
 
-        assertThat(validationErrors).containsOnly("totalAmount : may not be null");
+        assertThat(validationErrors).containsOnly("totalAmount : must not be null");
     }
 
     @Test

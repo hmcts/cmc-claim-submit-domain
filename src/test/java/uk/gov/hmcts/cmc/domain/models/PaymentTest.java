@@ -31,7 +31,7 @@ public class PaymentTest {
         //then
         assertThat(errors).hasSize(2).contains(
             "reference : may not be empty",
-            "amount : may not be null"
+            "amount : must not be null"
         );
     }
 
