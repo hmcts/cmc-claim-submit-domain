@@ -1,6 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models.legalrep;
-
-import uk.gov.hmcts.cmc.domain.models.Address;
+package uk.gov.hmcts.cmc.domain.models;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

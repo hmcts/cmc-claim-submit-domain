@@ -1,7 +1,7 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
 import uk.gov.hmcts.cmc.domain.models.Address;
-import uk.gov.hmcts.cmc.domain.models.legalrep.Representative;
+import uk.gov.hmcts.cmc.domain.models.Representative;
 import uk.gov.hmcts.cmc.domain.models.otherparty.CompanyDetails;
 import uk.gov.hmcts.cmc.domain.models.otherparty.IndividualDetails;
 import uk.gov.hmcts.cmc.domain.models.otherparty.OrganisationDetails;

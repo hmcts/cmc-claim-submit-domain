@@ -2,7 +2,7 @@ package uk.gov.hmcts.cmc.domain.models.party;
 
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.CollectionId;
-import uk.gov.hmcts.cmc.domain.models.legalrep.Representative;
+import uk.gov.hmcts.cmc.domain.models.Representative;
 
 import lombok.EqualsAndHashCode;
 

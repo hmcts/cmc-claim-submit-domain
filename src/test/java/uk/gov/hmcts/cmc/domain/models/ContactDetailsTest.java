@@ -1,6 +1,7 @@
-package uk.gov.hmcts.cmc.domain.models.legalrep;
+package uk.gov.hmcts.cmc.domain.models;
 
 import uk.gov.hmcts.cmc.domain.builders.SampleContactDetails;
+import uk.gov.hmcts.cmc.domain.models.ContactDetails;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
