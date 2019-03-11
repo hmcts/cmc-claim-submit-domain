@@ -8,6 +8,7 @@ import uk.gov.hmcts.cmc.domain.models.evidence.Evidence;
 import uk.gov.hmcts.cmc.domain.models.interest.Interest;
 import uk.gov.hmcts.cmc.domain.models.particulars.HousingDisrepair;
 import uk.gov.hmcts.cmc.domain.models.particulars.PersonalInjury;
+import uk.gov.hmcts.cmc.domain.models.payment.Payment;
 import uk.gov.hmcts.cmc.domain.models.timeline.Timeline;
 
 import lombok.EqualsAndHashCode;

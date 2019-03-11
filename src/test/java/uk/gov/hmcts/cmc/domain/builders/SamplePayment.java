@@ -1,7 +1,7 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
-import uk.gov.hmcts.cmc.domain.models.Payment;
-import uk.gov.hmcts.cmc.domain.models.Payment.PaymentBuilder;
+import uk.gov.hmcts.cmc.domain.models.payment.Payment;
+import uk.gov.hmcts.cmc.domain.models.payment.Payment.PaymentBuilder;
 
 import java.math.BigDecimal;
 
