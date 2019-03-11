@@ -1,12 +1,13 @@
 package uk.gov.hmcts.cmc.domain.models.party;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import uk.gov.hmcts.cmc.domain.constraints.AgeRangeValidator;
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.legalrep.Representative;
+
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import java.time.LocalDate;
 
@@ -15,7 +16,6 @@ import java.time.LocalDate;
 public class Individual extends Party {
 
     @JsonUnwrapped
-    @AgeRangeValidator
     private final LocalDate dateOfBirth;
 
     @Builder

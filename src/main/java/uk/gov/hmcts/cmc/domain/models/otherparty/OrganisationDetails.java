@@ -1,12 +1,14 @@
 package uk.gov.hmcts.cmc.domain.models.otherparty;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.legalrep.Representative;
 import uk.gov.hmcts.cmc.domain.models.party.HasContactPerson;
 
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+
 import java.util.Optional;
+
 import javax.validation.constraints.Size;
 
 @EqualsAndHashCode(callSuper = true)

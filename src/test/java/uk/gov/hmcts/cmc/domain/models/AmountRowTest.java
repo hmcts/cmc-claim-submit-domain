@@ -21,30 +21,6 @@ public class AmountRowTest {
     }
 
     @Test
-    public void shouldReturnValidationMessageWhenAmountHasMissingReason() {
-        //given
-        AmountRow amountRow = AmountRow.builder().reason(null).amount(new BigDecimal("40")).build();
-        //when
-        Set<String> errors = validate(amountRow);
-        //then
-        assertThat(errors)
-            .hasSize(1)
-            .contains("Claimant Amount is inValid");
-    }
-
-    @Test
-    public void shouldReturnValidationMessageWhenAmountHasMissingAmount() {
-        //given
-        AmountRow amountRow = AmountRow.builder().reason("reason").amount(null).build();
-        //when
-        Set<String> errors = validate(amountRow);
-        //then
-        assertThat(errors)
-            .hasSize(1)
-            .contains("Claimant Amount is inValid");
-    }
-
-    @Test
     public void shouldReturnValidationMessageWhenAmountHasValueLessThanMinimum() {
         //given
         AmountRow amountRow = AmountRow.builder().reason("reason").amount(new BigDecimal("0.00")).build();

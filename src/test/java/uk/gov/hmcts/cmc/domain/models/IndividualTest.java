@@ -5,7 +5,6 @@ import uk.gov.hmcts.cmc.domain.models.party.Individual;
 
 import org.junit.Test;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,17 +21,6 @@ public class IndividualTest {
         Set<String> errorMessages = validate(individual);
 
         assertThat(errorMessages).hasSize(0);
-    }
-
-    @Test
-    public void shouldRaiseValidationErrorWhenDateOfBirthIsFromTheFuture() {
-        Individual individual = SampleParty.builder()
-            .withDateOfBirth(LocalDate.now().plusDays(10))
-            .individual();
-
-        Set<String> errorMessages = validate(individual);
-
-        assertThat(errorMessages).hasSize(1).contains("dateOfBirth : Age must be between 18 and 150");
     }
 
 }

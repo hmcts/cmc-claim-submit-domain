@@ -16,7 +16,6 @@ import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static uk.gov.hmcts.cmc.domain.BeanValidator.validate;
 import static uk.gov.hmcts.cmc.domain.models.Interest.InterestType.STANDARD;
-import static uk.gov.hmcts.cmc.domain.models.InterestDate.InterestDateType.CUSTOM;
 
 public class ClaimDataTest {
 
@@ -39,32 +38,6 @@ public class ClaimDataTest {
         Set<String> errors = validate(claimData);
         //then
         assertThat(errors).isEmpty();
-    }
-
-    @Test
-    public void shouldBeInvalidWhenGivenInterestIsInvalid() {
-        //given
-        InterestDate invalidInterestDate = SampleInterestDate
-                .builder()
-                .withType(CUSTOM)
-                .withReason(null)
-                .build();
-        Interest validInterest = SampleInterest
-                .builder()
-                .withType(STANDARD)
-                .withRate(new BigDecimal(8))
-                .withReason(null)
-                .withInterestBreakdown(null)
-                .withInterestDate(invalidInterestDate)
-                .withSpecificDailyAmount(null)
-                .build();
-        ClaimData claimData = SampleClaimData.builder()
-                .withInterest(validInterest)
-                .build();
-        //when
-        Set<String> errors = validate(claimData);
-        //then
-        assertThat(errors).containsOnly("interest.interestDate : reason : may not be null");
     }
 
     @Test

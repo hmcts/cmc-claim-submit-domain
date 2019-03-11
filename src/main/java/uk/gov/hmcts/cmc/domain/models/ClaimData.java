@@ -1,11 +1,5 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.EqualsAndHashCode;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 import uk.gov.hmcts.cmc.domain.constraints.EachNotNull;
 import uk.gov.hmcts.cmc.domain.models.amount.Amount;
 import uk.gov.hmcts.cmc.domain.models.evidence.Evidence;
@@ -16,11 +10,21 @@ import uk.gov.hmcts.cmc.domain.models.particulars.PersonalInjury;
 import uk.gov.hmcts.cmc.domain.models.party.Party;
 import uk.gov.hmcts.cmc.domain.utils.MonetaryConversions;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import lombok.EqualsAndHashCode;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -32,7 +36,7 @@ import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 @EqualsAndHashCode
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ClaimData {
-    @Valid
+
     private final UUID externalId;
 
     @Valid

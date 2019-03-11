@@ -32,41 +32,6 @@ public class InterestDateTest {
     }
 
     @Test
-    public void withCustomType_shouldBeInvalidWhenDateInTheFuture() {
-        //given
-        LocalDate todayPlusOne = LocalDate.now().plusDays(1);
-        InterestDate interestDate = SampleInterestDate.builder()
-                .withType(CUSTOM)
-                .withDate(todayPlusOne)
-                .withReason("reason")
-                .withEndDateType(InterestEndDateType.SUBMISSION)
-                .build();
-        //when
-        Set<String> errors = validate(interestDate);
-        //then
-        assertThat(errors)
-                .containsExactlyInAnyOrder("date : is in the future");
-    }
-
-    @Test
-    public void withCustomType_shouldBeInvalidWhenMandatoryFieldsMissing() {
-        //given
-        InterestDate interestDate = SampleInterestDate.builder()
-                .withType(CUSTOM)
-                .withDate(null)
-                .withReason(null)
-                .withEndDateType(null)
-                .build();
-        //when
-        Set<String> errors = validate(interestDate);
-        //then
-        assertThat(errors)
-                .containsExactlyInAnyOrder(
-                        "date : may not be null",
-                        "reason : may not be null");
-    }
-
-    @Test
     public void withSubmissionType_shouldBeSuccessfulValidation() {
         //given
         InterestDate interestDate = SampleInterestDate.builder()
@@ -82,24 +47,6 @@ public class InterestDateTest {
     }
 
     @Test
-    public void withSubmissionType_shouldBeInvalidWhenUnexpectedFieldsProvided() {
-        //given
-        InterestDate interestDate = SampleInterestDate.builder()
-                .withType(SUBMISSION)
-                .withDate(LocalDate.of(2015, 2, 5))
-                .withReason("reason")
-                .withEndDateType(SETTLED_OR_JUDGMENT)
-                .build();
-        //when
-        Set<String> errors = validate(interestDate);
-        //then
-        assertThat(errors)
-                .containsExactlyInAnyOrder(
-                        "date : may not be provided when type is 'submission'",
-                        "reason : may not be provided when type is 'submission'");
-    }
-
-    @Test
     public void withNullType_shouldBeSuccessfulValidation() {
         //given
         InterestDate interestDate = SampleInterestDate.builder()
@@ -112,24 +59,6 @@ public class InterestDateTest {
         Set<String> errors = validate(interestDate);
         //then
         assertThat(errors).isEmpty();
-    }
-
-    @Test
-    public void withNullType_shouldBeInvalidWhenUnexpectedFieldsProvided() {
-        //given
-        InterestDate interestDate = SampleInterestDate.builder()
-                .withType(null)
-                .withDate(LocalDate.of(2015, 2, 5))
-                .withReason("reason")
-                .withEndDateType(SETTLED_OR_JUDGMENT)
-                .build();
-        //when
-        Set<String> errors = validate(interestDate);
-        //then
-        assertThat(errors)
-                .containsExactlyInAnyOrder(
-                        "date : may not be provided when type is undefined",
-                        "reason : may not be provided when type is undefined");
     }
 
     @Test

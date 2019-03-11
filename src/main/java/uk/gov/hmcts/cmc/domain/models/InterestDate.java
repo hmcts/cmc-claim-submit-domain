@@ -1,19 +1,18 @@
 package uk.gov.hmcts.cmc.domain.models;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
+import lombok.EqualsAndHashCode;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import lombok.EqualsAndHashCode;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import uk.gov.hmcts.cmc.domain.constraints.DateNotInTheFuture;
-import uk.gov.hmcts.cmc.domain.constraints.ValidInterestDate;
 
 import java.time.LocalDate;
 
 import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @EqualsAndHashCode
-@ValidInterestDate
 public class InterestDate {
     public enum InterestDateType {
         @JsonProperty("custom")
@@ -34,7 +33,6 @@ public class InterestDate {
     private final InterestDateType type;
 
     @JsonUnwrapped
-    @DateNotInTheFuture
     private final LocalDate date;
 
     private final String reason;

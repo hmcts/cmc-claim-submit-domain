@@ -1,18 +1,19 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import uk.gov.hmcts.cmc.domain.constraints.ValidInterest;
+
+import lombok.EqualsAndHashCode;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 import java.util.Optional;
+
 import javax.validation.constraints.NotNull;
 
 import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @EqualsAndHashCode
-@ValidInterest
 public class Interest {
     public enum InterestType {
         @JsonProperty("standard")
