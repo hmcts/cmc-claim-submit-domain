@@ -2,13 +2,12 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import uk.gov.hmcts.cmc.domain.constraints.Money;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode

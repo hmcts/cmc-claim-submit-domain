@@ -4,8 +4,6 @@ import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.CollectionId;
 import uk.gov.hmcts.cmc.domain.models.legalrep.Representative;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import lombok.EqualsAndHashCode;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -15,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import java.util.Optional;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 

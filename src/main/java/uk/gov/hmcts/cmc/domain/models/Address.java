@@ -1,10 +1,11 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import org.hibernate.validator.constraints.NotBlank;
 import uk.gov.hmcts.cmc.domain.constraints.Postcode;
 
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 

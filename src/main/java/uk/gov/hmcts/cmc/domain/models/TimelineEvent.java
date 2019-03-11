@@ -1,11 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @EqualsAndHashCode(callSuper = true)

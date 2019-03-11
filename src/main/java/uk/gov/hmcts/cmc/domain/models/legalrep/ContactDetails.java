@@ -2,13 +2,12 @@ package uk.gov.hmcts.cmc.domain.models.legalrep;
 
 import uk.gov.hmcts.cmc.domain.constraints.PhoneNumber;
 
-import org.hibernate.validator.constraints.Email;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 
 import java.util.Optional;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 @Builder

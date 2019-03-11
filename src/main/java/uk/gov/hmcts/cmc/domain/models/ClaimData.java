@@ -9,9 +9,6 @@ import uk.gov.hmcts.cmc.domain.models.particulars.HousingDisrepair;
 import uk.gov.hmcts.cmc.domain.models.particulars.PersonalInjury;
 import uk.gov.hmcts.cmc.domain.models.party.Party;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import lombok.EqualsAndHashCode;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -23,6 +20,8 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;

@@ -43,7 +43,7 @@ public class InterestBreakdownTest {
 
         Set<String> validationErrors = validate(interestBreakdown);
 
-        assertThat(validationErrors).containsOnly("explanation : may not be empty");
+        assertThat(validationErrors).containsOnly("explanation : must not be blank");
     }
 
     @Test
@@ -55,7 +55,7 @@ public class InterestBreakdownTest {
 
         Set<String> validationErrors = validate(interestBreakdown);
 
-        assertThat(validationErrors).containsOnly("explanation : may not be empty");
+        assertThat(validationErrors).containsOnly("explanation : must not be blank");
     }
 
     @Test

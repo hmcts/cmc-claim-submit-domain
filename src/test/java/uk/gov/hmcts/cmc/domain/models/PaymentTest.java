@@ -30,7 +30,7 @@ public class PaymentTest {
         Set<String> errors = validate(payment);
         //then
         assertThat(errors).hasSize(2).contains(
-            "reference : may not be empty",
+            "reference : must not be blank",
             "amount : must not be null"
         );
     }

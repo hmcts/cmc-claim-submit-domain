@@ -5,9 +5,6 @@ import uk.gov.hmcts.cmc.domain.models.CollectionId;
 import uk.gov.hmcts.cmc.domain.models.legalrep.Representative;
 import uk.gov.hmcts.cmc.domain.models.party.NamedParty;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
-
 import lombok.EqualsAndHashCode;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -17,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import java.util.Optional;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
