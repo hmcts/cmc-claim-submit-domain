@@ -2,7 +2,7 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import uk.gov.hmcts.cmc.domain.builders.SampleAddress;
 import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
-import uk.gov.hmcts.cmc.domain.models.otherparty.TheirDetails;
+import uk.gov.hmcts.cmc.domain.models.defendants.TheirDetails;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;

@@ -1,7 +1,7 @@
 package uk.gov.hmcts.cmc.domain.models;
 
 import uk.gov.hmcts.cmc.domain.builders.SampleParty;
-import uk.gov.hmcts.cmc.domain.models.party.Individual;
+import uk.gov.hmcts.cmc.domain.models.claimants.Individual;
 
 import org.junit.Test;
 

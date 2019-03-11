@@ -3,6 +3,8 @@ package uk.gov.hmcts.cmc.domain.models;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterest;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterestBreakdown;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
+import uk.gov.hmcts.cmc.domain.models.interest.Interest;
+import uk.gov.hmcts.cmc.domain.models.interest.InterestDate;
 
 import org.junit.Test;
 
@@ -11,10 +13,10 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static uk.gov.hmcts.cmc.domain.BeanValidator.validate;
-import static uk.gov.hmcts.cmc.domain.models.Interest.InterestType.BREAKDOWN;
-import static uk.gov.hmcts.cmc.domain.models.Interest.InterestType.DIFFERENT;
-import static uk.gov.hmcts.cmc.domain.models.Interest.InterestType.NO_INTEREST;
-import static uk.gov.hmcts.cmc.domain.models.Interest.InterestType.STANDARD;
+import static uk.gov.hmcts.cmc.domain.models.interest.Interest.InterestType.BREAKDOWN;
+import static uk.gov.hmcts.cmc.domain.models.interest.Interest.InterestType.DIFFERENT;
+import static uk.gov.hmcts.cmc.domain.models.interest.Interest.InterestType.NO_INTEREST;
+import static uk.gov.hmcts.cmc.domain.models.interest.Interest.InterestType.STANDARD;
 
 public class InterestTest {
 

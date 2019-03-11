@@ -5,6 +5,9 @@ import uk.gov.hmcts.cmc.domain.builders.SampleInterest;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
 import uk.gov.hmcts.cmc.domain.builders.SampleParty;
 import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
+import uk.gov.hmcts.cmc.domain.models.interest.Interest;
+import uk.gov.hmcts.cmc.domain.models.timeline.Timeline;
+import uk.gov.hmcts.cmc.domain.models.timeline.TimelineEvent;
 
 import org.junit.Test;
 
@@ -14,7 +17,7 @@ import java.util.Set;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static uk.gov.hmcts.cmc.domain.BeanValidator.validate;
-import static uk.gov.hmcts.cmc.domain.models.Interest.InterestType.STANDARD;
+import static uk.gov.hmcts.cmc.domain.models.interest.Interest.InterestType.STANDARD;
 
 public class ClaimDataTest {
 

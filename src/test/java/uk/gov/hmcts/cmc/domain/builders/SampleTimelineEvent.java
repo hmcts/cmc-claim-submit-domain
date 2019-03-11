@@ -1,6 +1,6 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
-import uk.gov.hmcts.cmc.domain.models.TimelineEvent;
+import uk.gov.hmcts.cmc.domain.models.timeline.TimelineEvent;
 
 public class SampleTimelineEvent {
 

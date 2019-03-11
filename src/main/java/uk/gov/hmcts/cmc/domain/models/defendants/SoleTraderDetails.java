@@ -1,10 +1,10 @@
-package uk.gov.hmcts.cmc.domain.models.otherparty;
+package uk.gov.hmcts.cmc.domain.models.defendants;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.Representative;
-import uk.gov.hmcts.cmc.domain.models.party.TitledParty;
+import uk.gov.hmcts.cmc.domain.models.claimants.TitledParty;
 
 import java.util.Optional;
 import javax.validation.constraints.Size;

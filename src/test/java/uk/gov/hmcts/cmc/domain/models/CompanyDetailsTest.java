@@ -1,7 +1,7 @@
 package uk.gov.hmcts.cmc.domain.models;
 
 import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
-import uk.gov.hmcts.cmc.domain.models.otherparty.CompanyDetails;
+import uk.gov.hmcts.cmc.domain.models.defendants.CompanyDetails;
 
 import org.junit.Test;
 

@@ -1,7 +1,8 @@
 package uk.gov.hmcts.cmc.domain.models;
 
 import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
-import uk.gov.hmcts.cmc.domain.models.InterestDate.InterestEndDateType;
+import uk.gov.hmcts.cmc.domain.models.interest.InterestDate;
+import uk.gov.hmcts.cmc.domain.models.interest.InterestDate.InterestEndDateType;
 
 import org.junit.Test;
 
@@ -10,9 +11,9 @@ import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static uk.gov.hmcts.cmc.domain.BeanValidator.validate;
-import static uk.gov.hmcts.cmc.domain.models.InterestDate.InterestDateType.CUSTOM;
-import static uk.gov.hmcts.cmc.domain.models.InterestDate.InterestDateType.SUBMISSION;
-import static uk.gov.hmcts.cmc.domain.models.InterestDate.InterestEndDateType.SETTLED_OR_JUDGMENT;
+import static uk.gov.hmcts.cmc.domain.models.interest.InterestDate.InterestDateType.CUSTOM;
+import static uk.gov.hmcts.cmc.domain.models.interest.InterestDate.InterestDateType.SUBMISSION;
+import static uk.gov.hmcts.cmc.domain.models.interest.InterestDate.InterestEndDateType.SETTLED_OR_JUDGMENT;
 
 public class InterestDateTest {
 

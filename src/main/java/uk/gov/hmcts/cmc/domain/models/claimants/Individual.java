@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models.party;
+package uk.gov.hmcts.cmc.domain.models.claimants;
 
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.Representative;

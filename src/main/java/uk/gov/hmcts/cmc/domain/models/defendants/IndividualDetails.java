@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models.otherparty;
+package uk.gov.hmcts.cmc.domain.models.defendants;
 
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.Representative;

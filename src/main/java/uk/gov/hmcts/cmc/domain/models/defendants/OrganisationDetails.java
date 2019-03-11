@@ -1,8 +1,8 @@
-package uk.gov.hmcts.cmc.domain.models.otherparty;
+package uk.gov.hmcts.cmc.domain.models.defendants;
 
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.Representative;
-import uk.gov.hmcts.cmc.domain.models.party.HasContactPerson;
+import uk.gov.hmcts.cmc.domain.models.claimants.HasContactPerson;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

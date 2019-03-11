@@ -1,9 +1,9 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
 
-import uk.gov.hmcts.cmc.domain.models.Interest;
-import uk.gov.hmcts.cmc.domain.models.InterestBreakdown;
-import uk.gov.hmcts.cmc.domain.models.InterestDate;
+import uk.gov.hmcts.cmc.domain.models.interest.Interest;
+import uk.gov.hmcts.cmc.domain.models.interest.InterestBreakdown;
+import uk.gov.hmcts.cmc.domain.models.interest.InterestDate;
 
 import java.math.BigDecimal;
 

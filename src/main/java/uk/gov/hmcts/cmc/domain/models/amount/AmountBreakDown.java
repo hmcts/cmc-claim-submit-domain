@@ -1,7 +1,5 @@
 package uk.gov.hmcts.cmc.domain.models.amount;
 
-import uk.gov.hmcts.cmc.domain.models.AmountRow;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 

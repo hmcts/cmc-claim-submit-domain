@@ -1,5 +1,7 @@
 package uk.gov.hmcts.cmc.domain.models;
 
+import uk.gov.hmcts.cmc.domain.models.amount.AmountRow;
+
 import org.junit.Test;
 
 import java.math.BigDecimal;

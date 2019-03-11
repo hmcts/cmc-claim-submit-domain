@@ -1,4 +1,6 @@
-package uk.gov.hmcts.cmc.domain.models;
+package uk.gov.hmcts.cmc.domain.models.timeline;
+
+import uk.gov.hmcts.cmc.domain.models.CollectionId;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

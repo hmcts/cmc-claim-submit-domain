@@ -1,6 +1,6 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
-import uk.gov.hmcts.cmc.domain.models.InterestBreakdown;
+import uk.gov.hmcts.cmc.domain.models.interest.InterestBreakdown;
 
 import java.math.BigDecimal;
 

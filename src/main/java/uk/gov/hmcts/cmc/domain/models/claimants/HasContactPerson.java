@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models.party;
+package uk.gov.hmcts.cmc.domain.models.claimants;
 
 import java.util.Optional;
 

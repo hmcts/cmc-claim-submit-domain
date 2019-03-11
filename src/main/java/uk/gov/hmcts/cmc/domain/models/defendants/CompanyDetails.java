@@ -1,30 +1,31 @@
-package uk.gov.hmcts.cmc.domain.models.party;
+package uk.gov.hmcts.cmc.domain.models.defendants;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.Representative;
+import uk.gov.hmcts.cmc.domain.models.claimants.HasContactPerson;
 
 import java.util.Optional;
+import javax.validation.constraints.Size;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode(callSuper = true)
-public class Company extends Party implements HasContactPerson {
+public class CompanyDetails extends TheirDetails implements HasContactPerson {
 
+    @Size(max = 255, message = "may not be longer than {max} characters")
     private final String contactPerson;
 
     @Builder
-    public Company(
+    public CompanyDetails(
         String id,
         String name,
         Address address,
-        Address correspondenceAddress,
-        String mobilePhone,
+        String email,
         Representative representative,
+        Address serviceAddress,
         String contactPerson
     ) {
-        super(id, name, address, correspondenceAddress, mobilePhone, representative);
+        super(id, name, address, email, representative, serviceAddress);
         this.contactPerson = contactPerson;
     }
 

@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models.party;
+package uk.gov.hmcts.cmc.domain.models.claimants;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -7,36 +7,40 @@ import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.Representative;
 
 import java.util.Optional;
+import javax.validation.constraints.Size;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @EqualsAndHashCode(callSuper = true)
-public class Organisation extends Party implements HasContactPerson {
+public class SoleTrader extends Party implements TitledParty {
 
-    private final String contactPerson;
-    private final String companiesHouseNumber;
+    @Size(max = 35, message = "must be at most {max} characters")
+    private final String title;
+
+    private final String businessName;
 
     @Builder
-    public Organisation(
+    public SoleTrader(
         String id,
         String name,
         Address address,
         Address correspondenceAddress,
         String mobilePhone,
         Representative representative,
-        String contactPerson,
-        String companiesHouseNumber
+        String title,
+        String businessName
     ) {
         super(id, name, address, correspondenceAddress, mobilePhone, representative);
-        this.contactPerson = contactPerson;
-        this.companiesHouseNumber = companiesHouseNumber;
+        this.title = title;
+        this.businessName = businessName;
     }
 
-    public Optional<String> getContactPerson() {
-        return Optional.ofNullable(contactPerson);
+    @Override
+    public Optional<String> getTitle() {
+        return Optional.ofNullable(title);
     }
 
-    public Optional<String> getCompaniesHouseNumber() {
-        return Optional.ofNullable(companiesHouseNumber);
+    public Optional<String> getBusinessName() {
+        return Optional.ofNullable(businessName);
     }
 
 }

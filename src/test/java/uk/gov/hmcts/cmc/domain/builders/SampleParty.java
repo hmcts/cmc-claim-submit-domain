@@ -2,11 +2,11 @@ package uk.gov.hmcts.cmc.domain.builders;
 
 import uk.gov.hmcts.cmc.domain.models.Address;
 import uk.gov.hmcts.cmc.domain.models.Representative;
-import uk.gov.hmcts.cmc.domain.models.party.Company;
-import uk.gov.hmcts.cmc.domain.models.party.Individual;
-import uk.gov.hmcts.cmc.domain.models.party.Organisation;
-import uk.gov.hmcts.cmc.domain.models.party.Party;
-import uk.gov.hmcts.cmc.domain.models.party.SoleTrader;
+import uk.gov.hmcts.cmc.domain.models.claimants.Company;
+import uk.gov.hmcts.cmc.domain.models.claimants.Individual;
+import uk.gov.hmcts.cmc.domain.models.claimants.Organisation;
+import uk.gov.hmcts.cmc.domain.models.claimants.Party;
+import uk.gov.hmcts.cmc.domain.models.claimants.SoleTrader;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

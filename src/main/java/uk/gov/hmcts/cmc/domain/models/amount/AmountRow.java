@@ -1,6 +1,7 @@
-package uk.gov.hmcts.cmc.domain.models;
+package uk.gov.hmcts.cmc.domain.models.amount;
 
 import uk.gov.hmcts.cmc.domain.constraints.Money;
+import uk.gov.hmcts.cmc.domain.models.CollectionId;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
