@@ -1,7 +1,5 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
 import lombok.EqualsAndHashCode;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,8 +8,6 @@ import java.math.BigDecimal;
 import java.util.Optional;
 
 import javax.validation.constraints.NotNull;
-
-import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @EqualsAndHashCode
 public class Interest {
@@ -79,8 +75,4 @@ public class Interest {
         return interestDate;
     }
 
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ourStyle());
-    }
 }

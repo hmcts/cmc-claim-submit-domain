@@ -1,16 +1,16 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.validator.constraints.NotBlank;
 
-import java.math.BigDecimal;
-import javax.validation.constraints.NotNull;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 
-import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.math.BigDecimal;
+
+import javax.validation.constraints.NotNull;
 
 @Builder
 @EqualsAndHashCode
@@ -62,8 +62,4 @@ public class Payment {
         return dateCreated;
     }
 
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ourStyle());
-    }
 }

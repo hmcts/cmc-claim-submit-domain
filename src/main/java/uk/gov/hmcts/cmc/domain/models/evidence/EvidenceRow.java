@@ -1,16 +1,15 @@
 package uk.gov.hmcts.cmc.domain.models.evidence;
 
+import uk.gov.hmcts.cmc.domain.models.CollectionId;
+
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import uk.gov.hmcts.cmc.domain.models.CollectionId;
 
 import java.util.Optional;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @EqualsAndHashCode(callSuper = true)
 @Getter
@@ -31,11 +30,6 @@ public class EvidenceRow extends CollectionId {
 
     public Optional<String> getDescription() {
         return Optional.ofNullable(description);
-    }
-
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ourStyle());
     }
 
 }

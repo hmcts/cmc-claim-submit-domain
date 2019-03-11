@@ -8,18 +8,14 @@ import uk.gov.hmcts.cmc.domain.models.otherparty.TheirDetails;
 import uk.gov.hmcts.cmc.domain.models.particulars.HousingDisrepair;
 import uk.gov.hmcts.cmc.domain.models.particulars.PersonalInjury;
 import uk.gov.hmcts.cmc.domain.models.party.Party;
-import uk.gov.hmcts.cmc.domain.utils.MonetaryConversions;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import lombok.EqualsAndHashCode;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +27,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @EqualsAndHashCode
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -151,34 +146,6 @@ public class ClaimData {
         return interest;
     }
 
-    @JsonIgnore
-    public Party getClaimant() {
-        if (claimants.size() == 1) {
-            return claimants.get(0);
-        } else {
-            throw new IllegalStateException("This claim has multiple claimants");
-        }
-    }
-
-    @JsonIgnore
-    public TheirDetails getDefendant() {
-        if (defendants.size() == 1) {
-            return defendants.get(0);
-        } else {
-            throw new IllegalStateException("This claim has multiple defendants");
-        }
-    }
-
-    @JsonIgnore
-    public Boolean isClaimantRepresented() {
-        return claimants.stream().anyMatch(claimant -> claimant.getRepresentative().isPresent());
-    }
-
-    @JsonIgnore
-    public BigDecimal getFeesPaidInPound() {
-        return MonetaryConversions.penniesToPounds(new BigDecimal(feeAmountInPennies));
-    }
-
     public List<TheirDetails> getDefendants() {
         return defendants;
     }
@@ -231,8 +198,4 @@ public class ClaimData {
         return Optional.ofNullable(evidence);
     }
 
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ourStyle());
-    }
 }

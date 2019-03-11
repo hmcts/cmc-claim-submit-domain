@@ -1,14 +1,12 @@
 package uk.gov.hmcts.cmc.domain.models;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Size;
-
-import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @EqualsAndHashCode(callSuper = true)
 @Getter
@@ -27,11 +25,6 @@ public class TimelineEvent extends CollectionId {
         super(id);
         this.date = eventDate;
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ourStyle());
     }
 
 }

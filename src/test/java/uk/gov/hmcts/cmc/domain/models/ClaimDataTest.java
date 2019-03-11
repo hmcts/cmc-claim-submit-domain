@@ -9,7 +9,6 @@ import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Set;
 
 import static java.util.Arrays.asList;
@@ -111,23 +110,6 @@ public class ClaimDataTest {
     }
 
     @Test
-    public void getDefendantShouldReturnDefendantWhenOnlyOneIsSet() {
-        ClaimData claimData = SampleClaimData.validDefaults();
-        assertThat(claimData.getDefendant()).isNotNull();
-    }
-
-    @Test(expected = IllegalStateException.class)
-    public void getDefendantShouldThrowIllegalStateWhenThereIsMoreThanOneDefendant() {
-        ClaimData claimData = SampleClaimData.builder()
-            .clearDefendants()
-            .addDefendant(SampleTheirDetails.builder().individualDetails())
-            .addDefendant(SampleTheirDetails.builder().individualDetails())
-            .build();
-
-        claimData.getDefendant();
-    }
-
-    @Test
     public void shouldBeInvalidWhenGivenNullClaimants() {
         ClaimData claimData = SampleClaimData.builder()
             .withClaimants(null)
@@ -208,29 +190,6 @@ public class ClaimDataTest {
         Set<String> errors = validate(claimData);
 
         assertThat(errors).isEmpty();
-    }
-
-    @Test
-    public void getClaimantShouldReturnDefendantWhenOnlyOneIsSet() {
-        ClaimData claimData = SampleClaimData.validDefaults();
-        assertThat(claimData.getClaimant()).isNotNull();
-    }
-
-    @Test(expected = IllegalStateException.class)
-    public void getClaimantShouldThrowIllegalStateWhenThereIsMoreThanOneClaimant() {
-        ClaimData claimData = SampleClaimData.builder()
-            .clearClaimants()
-            .addClaimant(SampleParty.builder().individual())
-            .addClaimant(SampleParty.builder().individual())
-            .build();
-
-        claimData.getClaimant();
-    }
-
-    @Test
-    public void shouldConvertFeesToPound() {
-        ClaimData claimData = SampleClaimData.builder().withFeeAmount(BigInteger.valueOf(456712)).build();
-        assertThat(claimData.getFeesPaidInPound()).isEqualTo(new BigDecimal("4567.12"));
     }
 
     @Test

@@ -1,17 +1,17 @@
 package uk.gov.hmcts.cmc.domain.models.legalrep;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.hibernate.validator.constraints.NotBlank;
 import uk.gov.hmcts.cmc.domain.models.Address;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+
 import java.util.Optional;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @Builder
 @EqualsAndHashCode
@@ -48,11 +48,6 @@ public class Representative {
 
     public Optional<ContactDetails> getOrganisationContactDetails() {
         return Optional.ofNullable(organisationContactDetails);
-    }
-
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ourStyle());
     }
 
 }

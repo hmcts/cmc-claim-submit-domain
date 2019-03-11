@@ -1,7 +1,5 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
 import lombok.EqualsAndHashCode;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -9,8 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import java.time.LocalDate;
-
-import static uk.gov.hmcts.cmc.domain.utils.ToStringStyle.ourStyle;
 
 @EqualsAndHashCode
 public class InterestDate {
@@ -82,8 +78,4 @@ public class InterestDate {
         return type != null || date != null || reason != null;
     }
 
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ourStyle());
-    }
 }
