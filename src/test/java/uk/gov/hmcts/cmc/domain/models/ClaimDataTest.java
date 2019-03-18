@@ -1,5 +1,7 @@
 package uk.gov.hmcts.cmc.domain.models;
 
+import org.junit.Test;
+
 import uk.gov.hmcts.cmc.domain.builders.SampleClaimData;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterest;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
@@ -8,8 +10,6 @@ import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.models.interest.Interest;
 import uk.gov.hmcts.cmc.domain.models.timeline.Timeline;
 import uk.gov.hmcts.cmc.domain.models.timeline.TimelineEvent;
-
-import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Set;

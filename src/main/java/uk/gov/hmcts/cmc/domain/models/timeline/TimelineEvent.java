@@ -1,10 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models.timeline;
 
-import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+
+import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

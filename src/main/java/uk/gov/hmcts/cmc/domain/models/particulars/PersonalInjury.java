@@ -1,8 +1,8 @@
 package uk.gov.hmcts.cmc.domain.models.particulars;
 
-import lombok.EqualsAndHashCode;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotNull;
 

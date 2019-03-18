@@ -1,9 +1,9 @@
 package uk.gov.hmcts.cmc.domain.models.amount;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 

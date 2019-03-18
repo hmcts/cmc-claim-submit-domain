@@ -1,15 +1,15 @@
 package uk.gov.hmcts.cmc.domain.models.defendants;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+import lombok.EqualsAndHashCode;
+
 import uk.gov.hmcts.cmc.domain.models.claimants.NamedParty;
 import uk.gov.hmcts.cmc.domain.models.common.Address;
 import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
 import uk.gov.hmcts.cmc.domain.models.common.Representative;
-
-import lombok.EqualsAndHashCode;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.util.Optional;
 

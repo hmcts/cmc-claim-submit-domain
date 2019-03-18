@@ -1,10 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleAddress;
-import uk.gov.hmcts.cmc.domain.models.common.Address;
-
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+
+import uk.gov.hmcts.cmc.domain.builders.SampleAddress;
+import uk.gov.hmcts.cmc.domain.models.common.Address;
 
 import java.util.Set;
 

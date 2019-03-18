@@ -1,10 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models.interest;
 
-import lombok.EqualsAndHashCode;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 

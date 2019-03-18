@@ -1,7 +1,7 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
-import uk.gov.hmcts.cmc.domain.models.common.Representative.RepresentativeBuilder;
 import uk.gov.hmcts.cmc.domain.models.common.Representative;
+import uk.gov.hmcts.cmc.domain.models.common.Representative.RepresentativeBuilder;
 
 public class SampleRepresentative {
 

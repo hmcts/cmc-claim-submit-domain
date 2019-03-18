@@ -1,11 +1,11 @@
 package uk.gov.hmcts.cmc.domain.models.defendants;
 
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+
 import uk.gov.hmcts.cmc.domain.models.claimants.HasContactPerson;
 import uk.gov.hmcts.cmc.domain.models.common.Address;
 import uk.gov.hmcts.cmc.domain.models.common.Representative;
-
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
 
 import java.util.Optional;
 

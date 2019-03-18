@@ -1,9 +1,9 @@
 package uk.gov.hmcts.cmc.domain.models.common;
 
-import uk.gov.hmcts.cmc.domain.constraints.Postcode;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+
+import uk.gov.hmcts.cmc.domain.constraints.Postcode;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

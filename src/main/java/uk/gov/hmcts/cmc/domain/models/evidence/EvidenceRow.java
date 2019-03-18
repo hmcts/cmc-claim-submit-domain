@@ -1,10 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models.evidence;
 
-import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+
+import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
 
 import java.util.Optional;
 

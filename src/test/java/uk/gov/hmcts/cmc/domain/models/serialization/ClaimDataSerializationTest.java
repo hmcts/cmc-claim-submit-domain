@@ -1,5 +1,9 @@
 package uk.gov.hmcts.cmc.domain.models.serialization;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.junit.Test;
+
 import uk.gov.hmcts.cmc.domain.builders.SampleClaimData;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
 import uk.gov.hmcts.cmc.domain.builders.SampleParty;
@@ -7,10 +11,6 @@ import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.config.JacksonConfiguration;
 import uk.gov.hmcts.cmc.domain.models.ClaimData;
 import uk.gov.hmcts.cmc.domain.utils.ResourceReader;
-
-import org.junit.Test;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.time.LocalDate;

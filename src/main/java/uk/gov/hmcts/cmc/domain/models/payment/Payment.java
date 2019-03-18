@@ -1,10 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models.payment;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 

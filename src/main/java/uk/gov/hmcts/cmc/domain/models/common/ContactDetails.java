@@ -1,9 +1,9 @@
 package uk.gov.hmcts.cmc.domain.models.common;
 
-import uk.gov.hmcts.cmc.domain.constraints.PhoneNumber;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+
+import uk.gov.hmcts.cmc.domain.constraints.PhoneNumber;
 
 import java.util.Optional;
 

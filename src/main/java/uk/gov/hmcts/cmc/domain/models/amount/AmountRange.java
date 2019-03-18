@@ -1,9 +1,9 @@
 package uk.gov.hmcts.cmc.domain.models.amount;
 
-import uk.gov.hmcts.cmc.domain.constraints.Money;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+
+import uk.gov.hmcts.cmc.domain.constraints.Money;
 
 import java.math.BigDecimal;
 import java.util.Optional;

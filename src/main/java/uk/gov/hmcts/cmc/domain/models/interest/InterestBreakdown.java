@@ -1,8 +1,8 @@
 package uk.gov.hmcts.cmc.domain.models.interest;
 
-import uk.gov.hmcts.cmc.domain.constraints.Money;
-
 import lombok.EqualsAndHashCode;
+
+import uk.gov.hmcts.cmc.domain.constraints.Money;
 
 import java.math.BigDecimal;
 

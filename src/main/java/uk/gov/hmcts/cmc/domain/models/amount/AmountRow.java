@@ -1,10 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models.amount;
 
-import uk.gov.hmcts.cmc.domain.constraints.Money;
-import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+
+import uk.gov.hmcts.cmc.domain.constraints.Money;
+import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
 
 import java.math.BigDecimal;
 

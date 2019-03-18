@@ -1,10 +1,10 @@
 package uk.gov.hmcts.cmc.domain.models.defendants;
 
-import uk.gov.hmcts.cmc.domain.models.common.Address;
-import uk.gov.hmcts.cmc.domain.models.common.Representative;
-
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+
+import uk.gov.hmcts.cmc.domain.models.common.Address;
+import uk.gov.hmcts.cmc.domain.models.common.Representative;
 
 import java.time.LocalDate;
 import java.util.Optional;

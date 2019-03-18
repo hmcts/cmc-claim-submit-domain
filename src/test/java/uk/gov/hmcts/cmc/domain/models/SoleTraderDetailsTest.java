@@ -1,9 +1,9 @@
 package uk.gov.hmcts.cmc.domain.models;
 
+import org.junit.Test;
+
 import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.models.defendants.SoleTraderDetails;
-
-import org.junit.Test;
 
 import java.util.Set;
 
