@@ -109,7 +109,7 @@ public class PhoneNumberConstraintValidatorTest {
     }
 
     @Test
-    public void shouldBeInvalidForMobileNumberWithNonUKCountryCode() {
+    public void shouldBeInvalidForMobileNumberWithNonUkCountryCode() {
         assertThat(validator.isValid("+48 7873738547", context)).isFalse();
     }
 
