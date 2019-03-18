@@ -1,7 +1,8 @@
 package uk.gov.hmcts.cmc.domain.models.interest;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 

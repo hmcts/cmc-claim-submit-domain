@@ -1,8 +1,8 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
 import uk.gov.hmcts.cmc.domain.models.amount.AmountBreakDown;
-import uk.gov.hmcts.cmc.domain.models.amount.AmountRow;
 import uk.gov.hmcts.cmc.domain.models.amount.AmountBreakDown.AmountBreakDownBuilder;
+import uk.gov.hmcts.cmc.domain.models.amount.AmountRow;
 
 import java.math.BigDecimal;
 

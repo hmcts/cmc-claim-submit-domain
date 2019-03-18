@@ -1,7 +1,7 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
-import uk.gov.hmcts.cmc.domain.models.Address;
-import uk.gov.hmcts.cmc.domain.models.Address.AddressBuilder;
+import uk.gov.hmcts.cmc.domain.models.common.Address;
+import uk.gov.hmcts.cmc.domain.models.common.Address.AddressBuilder;
 
 public class SampleAddress {
 

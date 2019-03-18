@@ -1,6 +1,7 @@
 package uk.gov.hmcts.cmc.domain.constraints;
 
 import java.util.Collection;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 

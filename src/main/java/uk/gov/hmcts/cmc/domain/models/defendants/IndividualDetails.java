@@ -1,7 +1,7 @@
 package uk.gov.hmcts.cmc.domain.models.defendants;
 
-import uk.gov.hmcts.cmc.domain.models.Address;
-import uk.gov.hmcts.cmc.domain.models.Representative;
+import uk.gov.hmcts.cmc.domain.models.common.Address;
+import uk.gov.hmcts.cmc.domain.models.common.Representative;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

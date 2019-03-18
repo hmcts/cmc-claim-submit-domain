@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models;
+package uk.gov.hmcts.cmc.domain.models.common;
 
 import uk.gov.hmcts.cmc.domain.constraints.PhoneNumber;
 

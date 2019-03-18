@@ -2,6 +2,7 @@
 package uk.gov.hmcts.cmc.domain.constraints;
 
 import java.util.regex.Pattern;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 

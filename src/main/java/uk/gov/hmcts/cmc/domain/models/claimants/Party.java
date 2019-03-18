@@ -1,8 +1,8 @@
 package uk.gov.hmcts.cmc.domain.models.claimants;
 
-import uk.gov.hmcts.cmc.domain.models.Address;
-import uk.gov.hmcts.cmc.domain.models.CollectionId;
-import uk.gov.hmcts.cmc.domain.models.Representative;
+import uk.gov.hmcts.cmc.domain.models.common.Address;
+import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
+import uk.gov.hmcts.cmc.domain.models.common.Representative;
 
 import lombok.EqualsAndHashCode;
 

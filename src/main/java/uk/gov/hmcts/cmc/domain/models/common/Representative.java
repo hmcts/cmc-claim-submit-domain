@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models;
+package uk.gov.hmcts.cmc.domain.models.common;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
