@@ -4,14 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import lombok.EqualsAndHashCode;
+import lombok.Data;
 
-import uk.gov.hmcts.cmc.domain.models.claimants.NamedParty;
 import uk.gov.hmcts.cmc.domain.models.common.Address;
-import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
 import uk.gov.hmcts.cmc.domain.models.common.Representative;
-
-import java.util.Optional;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -32,61 +28,27 @@ import javax.validation.constraints.Size;
         @JsonSubTypes.Type(value = OrganisationDetails.class, name = "organisation")
     }
 )
-@EqualsAndHashCode(callSuper = true)
-public abstract class TheirDetails extends CollectionId implements NamedParty {
+@Data
+public abstract class TheirDetails {
+
+    private String id;
 
     @NotBlank
     @Size(max = 255, message = "may not be longer than {max} characters")
-    private final String name;
+    private String name;
 
     @Valid
     @NotNull
-    private final Address address;
+    private Address address;
 
     @Email(regexp = "\\S+")
-    private final String email;
+    private String email;
 
     @Valid
-    private final Representative representative;
+    private Representative representative;
 
     @Valid
-    private final Address serviceAddress;
+    private Address serviceAddress;
 
-    public TheirDetails(
-        String id,
-        String name,
-        Address address,
-        String email,
-        Representative representative,
-        Address serviceAddress
-    ) {
-        super(id);
-        this.name = name;
-        this.address = address;
-        this.email = email;
-        this.representative = representative;
-        this.serviceAddress = serviceAddress;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public Optional<String> getEmail() {
-        return Optional.ofNullable(email);
-    }
-
-    public Optional<Representative> getRepresentative() {
-        return Optional.ofNullable(representative);
-    }
-
-    public Optional<Address> getServiceAddress() {
-        return Optional.ofNullable(serviceAddress);
-    }
 
 }

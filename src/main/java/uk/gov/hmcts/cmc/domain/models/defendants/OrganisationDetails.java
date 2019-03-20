@@ -1,45 +1,14 @@
 package uk.gov.hmcts.cmc.domain.models.defendants;
 
-import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import uk.gov.hmcts.cmc.domain.models.claimants.HasContactPerson;
-import uk.gov.hmcts.cmc.domain.models.common.Address;
-import uk.gov.hmcts.cmc.domain.models.common.Representative;
-
-import java.util.Optional;
-
-import javax.validation.constraints.Size;
-
+@Data
 @EqualsAndHashCode(callSuper = true)
-public class OrganisationDetails extends TheirDetails implements HasContactPerson {
+public class OrganisationDetails extends TheirDetails {
 
-    @Size(max = 35, message = "may not be longer than {max} characters")
-    private final String contactPerson;
-    private final String companiesHouseNumber;
+    private String contactPerson;
 
-    @Builder
-    public OrganisationDetails(
-        String id,
-        String name,
-        Address address,
-        String email,
-        Representative representative,
-        Address serviceAddress,
-        String contactPerson,
-        String companiesHouseNumber
-    ) {
-        super(id, name, address, email, representative, serviceAddress);
-        this.contactPerson = contactPerson;
-        this.companiesHouseNumber = companiesHouseNumber;
-    }
-
-    public Optional<String> getContactPerson() {
-        return Optional.ofNullable(contactPerson);
-    }
-
-    public Optional<String> getCompaniesHouseNumber() {
-        return Optional.ofNullable(companiesHouseNumber);
-    }
+    private String companiesHouseNumber;
 
 }

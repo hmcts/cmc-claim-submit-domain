@@ -2,14 +2,13 @@ package uk.gov.hmcts.cmc.domain.models.interest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.EqualsAndHashCode;
+import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 import javax.validation.constraints.NotNull;
 
-@EqualsAndHashCode
+@Data
 public class Interest {
     public enum InterestType {
         @JsonProperty("standard")
@@ -23,56 +22,16 @@ public class Interest {
     }
 
     @NotNull
-    private final InterestType type;
+    private InterestType type;
 
-    private final InterestBreakdown interestBreakdown;
+    private InterestBreakdown interestBreakdown;
 
-    private final BigDecimal rate;
+    private BigDecimal rate;
 
-    private final String reason;
+    private String reason;
 
-    private final BigDecimal specificDailyAmount;
+    private BigDecimal specificDailyAmount;
 
-    private final InterestDate interestDate;
-
-    public Interest(
-        InterestType type,
-        InterestBreakdown interestBreakdown,
-        BigDecimal rate,
-        String reason,
-        BigDecimal specificDailyAmount,
-        InterestDate interestDate
-    ) {
-        this.type = type;
-        this.interestBreakdown = interestBreakdown;
-        this.rate = rate;
-        this.reason = reason;
-        this.specificDailyAmount = specificDailyAmount;
-        this.interestDate = interestDate;
-    }
-
-    public InterestType getType() {
-        return type;
-    }
-
-    public InterestBreakdown getInterestBreakdown() {
-        return interestBreakdown;
-    }
-
-    public BigDecimal getRate() {
-        return rate;
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public Optional<BigDecimal> getSpecificDailyAmount() {
-        return Optional.ofNullable(specificDailyAmount);
-    }
-
-    public InterestDate getInterestDate() {
-        return interestDate;
-    }
+    private InterestDate interestDate;
 
 }

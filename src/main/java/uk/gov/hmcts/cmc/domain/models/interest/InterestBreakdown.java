@@ -1,6 +1,6 @@
 package uk.gov.hmcts.cmc.domain.models.interest;
 
-import lombok.EqualsAndHashCode;
+import lombok.Data;
 
 import uk.gov.hmcts.cmc.domain.constraints.Money;
 
@@ -10,27 +10,14 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@EqualsAndHashCode
+@Data
 public class InterestBreakdown {
     @NotNull
     @Money
     @DecimalMin(value = "0.00")
-    private final BigDecimal totalAmount;
+    private BigDecimal totalAmount;
 
     @NotBlank
-    private final String explanation;
-
-    public InterestBreakdown(BigDecimal totalAmount, String explanation) {
-        this.totalAmount = totalAmount;
-        this.explanation = explanation;
-    }
-
-    public BigDecimal getTotalAmount() {
-        return totalAmount;
-    }
-
-    public String getExplanation() {
-        return explanation;
-    }
+    private String explanation;
 
 }

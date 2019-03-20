@@ -4,13 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import lombok.EqualsAndHashCode;
+import lombok.Data;
 
 import uk.gov.hmcts.cmc.domain.models.common.Address;
-import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
 import uk.gov.hmcts.cmc.domain.models.common.Representative;
-
-import java.util.Optional;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -30,61 +27,26 @@ import javax.validation.constraints.Size;
         @JsonSubTypes.Type(value = Organisation.class, name = "organisation")
     }
 )
-@EqualsAndHashCode(callSuper = true)
-public abstract class Party extends CollectionId implements NamedParty {
+@Data
+public abstract class Party {
 
     @NotBlank
     @Size(max = 255, message = "may not be longer than {max} characters")
-    private final String name;
+    private String name;
+
+    private String id;
 
     @Valid
     @NotNull
-    private final Address address;
+    private Address address;
 
     @Valid
-    private final Address correspondenceAddress;
+    private Address correspondenceAddress;
 
     @Size(max = 30, message = "may not be longer than {max} characters")
-    private final String mobilePhone;
+    private String mobilePhone;
 
     @Valid
-    private final Representative representative;
-
-    public Party(
-        String id,
-        String name,
-        Address address,
-        Address correspondenceAddress,
-        String mobilePhone,
-        Representative representative
-    ) {
-        super(id);
-        this.name = name;
-        this.address = address;
-        this.correspondenceAddress = correspondenceAddress;
-        this.mobilePhone = mobilePhone;
-        this.representative = representative;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public Optional<Address> getCorrespondenceAddress() {
-        return Optional.ofNullable(correspondenceAddress);
-    }
-
-    public Optional<String> getMobilePhone() {
-        return Optional.ofNullable(mobilePhone);
-    }
-
-    public Optional<Representative> getRepresentative() {
-        return Optional.ofNullable(representative);
-    }
+    private Representative representative;
 
 }

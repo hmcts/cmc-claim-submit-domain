@@ -1,39 +1,17 @@
 package uk.gov.hmcts.cmc.domain.models.claimants;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import uk.gov.hmcts.cmc.domain.models.common.Address;
-import uk.gov.hmcts.cmc.domain.models.common.Representative;
 
 import java.time.LocalDate;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Data
 @EqualsAndHashCode(callSuper = true)
 public class Individual extends Party {
 
     @JsonUnwrapped
-    private final LocalDate dateOfBirth;
-
-    @Builder
-    public Individual(
-        String id,
-        String name,
-        Address address,
-        Address correspondenceAddress,
-        String mobilePhone,
-        Representative representative,
-        LocalDate dateOfBirth
-    ) {
-        super(id, name, address, correspondenceAddress, mobilePhone, representative);
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
+    private LocalDate dateOfBirth;
 
 }

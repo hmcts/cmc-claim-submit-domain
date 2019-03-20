@@ -1,31 +1,17 @@
 package uk.gov.hmcts.cmc.domain.models.timeline;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-
-import uk.gov.hmcts.cmc.domain.models.common.CollectionId;
+import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
-@EqualsAndHashCode(callSuper = true)
-@Getter
-public class TimelineEvent extends CollectionId {
+@Data
+public class TimelineEvent {
 
-    @NotBlank
-    @Size(max = 20)
-    private final String date;
+    private String id;
 
     @NotBlank
-    @Size(max = 99000)
-    private final String description;
+    private String date;
 
-    @Builder
-    public TimelineEvent(String id, String eventDate, String description) {
-        super(id);
-        this.date = eventDate;
-        this.description = description;
-    }
-
+    @NotBlank
+    private String description;
 }

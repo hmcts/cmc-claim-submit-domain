@@ -1,21 +1,12 @@
 package uk.gov.hmcts.cmc.domain.models.interest;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.EqualsAndHashCode;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
-@EqualsAndHashCode
+@Data
 public class InterestAmount {
 
-    private final BigDecimal amount;
+    private BigDecimal amount;
 
-    public InterestAmount(@JsonProperty("amount") BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
 }
