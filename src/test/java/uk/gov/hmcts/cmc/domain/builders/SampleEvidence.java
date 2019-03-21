@@ -6,6 +6,10 @@ import static java.util.Collections.singletonList;
 
 public class SampleEvidence {
 
+    private SampleEvidence() {
+        super();
+    }
+
     public static Evidence validDefaults() {
         Evidence evidence = new Evidence();
         evidence.setRows(singletonList(SampleEvidenceRow.validDefaults()));

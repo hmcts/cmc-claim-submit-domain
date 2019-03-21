@@ -10,6 +10,8 @@ import uk.gov.hmcts.cmc.domain.builders.SampleParty;
 import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.config.JacksonConfiguration;
 import uk.gov.hmcts.cmc.domain.models.ClaimData;
+import uk.gov.hmcts.cmc.domain.models.claimants.Individual;
+import uk.gov.hmcts.cmc.domain.models.defendants.IndividualDetails;
 import uk.gov.hmcts.cmc.domain.utils.ResourceReader;
 
 import java.io.IOException;
@@ -31,6 +33,14 @@ public class ClaimDataSerializationTest {
         ClaimData claimData = mapper.readValue(input, ClaimData.class);
 
         //then
+        Individual claimant = SampleParty.individual();
+        claimant.setRepresentative(null);
+
+        IndividualDetails defendent = SampleTheirDetails.individualDetails();
+        defendent.setRepresentative(null);
+        defendent.setServiceAddress(null);
+        defendent.setDateOfBirth(null);
+
         ClaimData other = SampleClaimData.builder()
             .withExternalId(UUID.fromString("9f49d8df-b734-4e86-aeb6-e22f0c2ca78d"))
             .withInterest(
@@ -47,12 +57,9 @@ public class ClaimDataSerializationTest {
             .withPersonalInjury(null)
             .withStatementOfTruth(null)
             .clearClaimants()
-            .addClaimant(SampleParty.builder().withRepresentative(null).individual())
-            .withDefendant(SampleTheirDetails.builder()
-                .withRepresentative(null)
-                .withServiceAddress(null)
-                .withDateOfBirth(null)
-                .individualDetails())
+            .addClaimant(claimant)
+            .clearDefendants()
+            .addDefendant(defendent)
             .build();
 
         assertThat(claimData).isEqualTo(other);

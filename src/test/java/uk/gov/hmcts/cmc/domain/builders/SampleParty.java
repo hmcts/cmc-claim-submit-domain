@@ -30,6 +30,12 @@ public class SampleParty {
         return new SampleParty();
     }
 
+
+    public static SampleParty individualBuilder() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
     public SampleParty withName(String name) {
         this.name = name;
         return this;
@@ -160,4 +166,5 @@ public class SampleParty {
 
         return company;
     }
+
 }

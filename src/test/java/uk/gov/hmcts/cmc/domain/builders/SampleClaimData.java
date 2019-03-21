@@ -7,19 +7,16 @@ import uk.gov.hmcts.cmc.domain.models.claimants.Party;
 import uk.gov.hmcts.cmc.domain.models.defendants.TheirDetails;
 import uk.gov.hmcts.cmc.domain.models.evidence.Evidence;
 import uk.gov.hmcts.cmc.domain.models.interest.Interest;
-import uk.gov.hmcts.cmc.domain.models.particulars.DamagesExpectation;
 import uk.gov.hmcts.cmc.domain.models.particulars.HousingDisrepair;
 import uk.gov.hmcts.cmc.domain.models.particulars.PersonalInjury;
 import uk.gov.hmcts.cmc.domain.models.payment.Payment;
 import uk.gov.hmcts.cmc.domain.models.timeline.Timeline;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 import static java.util.Collections.singletonList;
-import static uk.gov.hmcts.cmc.domain.builders.SampleInterest.noInterestBuilder;
 
 public class SampleClaimData {
 
@@ -30,30 +27,15 @@ public class SampleClaimData {
     private Amount amount = SampleAmountBreakdown.validDefaults();
     private Interest interest = SampleInterest.standard();
     private String reason = "reason";
-    private BigInteger feeAmount = new BigInteger("4000");
     private String feeAccountNumber = "PBA1234567";
-    private StatementOfTruth statementOfTruth = new StatementOfTruth()
-                                                        {{
-                                                           setSignerName(claimants.get(0).getName());
-                                                           setSignerRole("Director");
-                                                        }};
-
-    private PersonalInjury personalInjury = new PersonalInjury()
-                                                        {{
-                                                            setGeneralDamages(DamagesExpectation.MORE_THAN_THOUSAND_POUNDS);
-                                                        }};
-
+    private StatementOfTruth statementOfTruth = SampleStatementOfTruth.validDefaults();
+    private PersonalInjury personalInjury = SamplePersonalInjury.validDefaults();
     private String externalReferenceNumber = "CLAIM234324";
     private String preferredCourt = "LONDON COUNTY COUNCIL";
-    private String feeCode = "X0012";
     private Timeline timeline = SampleTimeline.validDefaults();
     private Evidence evidence = SampleEvidence.validDefaults();
 
-    private HousingDisrepair housingDisrepair = new HousingDisrepair()
-                                                        {{
-                                                            setCostOfRepairsDamages(DamagesExpectation.MORE_THAN_THOUSAND_POUNDS);
-                                                            setOtherDamages(DamagesExpectation.MORE_THAN_THOUSAND_POUNDS);
-                                                        }};
+    private HousingDisrepair housingDisrepair = SampleHousingDisrepair.validDefaults();
 
     public static SampleClaimData builder() {
         return new SampleClaimData();
@@ -129,11 +111,6 @@ public class SampleClaimData {
         return this;
     }
 
-    public SampleClaimData withFeeAmount(BigInteger feeAmount) {
-        this.feeAmount = feeAmount;
-        return this;
-    }
-
     public SampleClaimData withInterest(Interest interest) {
         this.interest = interest;
         return this;
@@ -161,11 +138,6 @@ public class SampleClaimData {
 
     public SampleClaimData withPreferredCourt(String preferredCourt) {
         this.preferredCourt = preferredCourt;
-        return this;
-    }
-
-    public SampleClaimData withFeeCode(String feeCode) {
-        this.feeCode = feeCode;
         return this;
     }
 
@@ -208,50 +180,5 @@ public class SampleClaimData {
 
     public static ClaimData validDefaults() {
         return builder().build();
-    }
-
-    public static ClaimData submittedByClaimant() {
-        return submittedByClaimantBuilder().build();
-    }
-
-    public static SampleClaimData submittedByClaimantBuilder() {
-        return builder()
-            .withExternalId(UUID.randomUUID())
-            .withFeeAccountNumber(null)
-            .withStatementOfTruth(null)
-            .withPersonalInjury(null)
-            .withHousingDisrepair(null)
-            .clearClaimants()
-            .addClaimant(SampleParty.builder()
-                .withRepresentative(null)
-                .individual())
-            .withDefendant(SampleTheirDetails.builder()
-                .withRepresentative(null)
-                .individualDetails())
-            .withTimeline(SampleTimeline.validDefaults())
-            .withEvidence(SampleEvidence.validDefaults());
-    }
-
-    public static ClaimData submittedByLegalRepresentative() {
-        return submittedByLegalRepresentativeBuilder().build();
-    }
-
-    public static SampleClaimData submittedByLegalRepresentativeBuilder() {
-        return new SampleClaimData()
-            .withAmount(SampleAmountRange.validDefaults());
-    }
-
-    public static ClaimData noInterest() {
-        return builder()
-            .withInterest(
-                noInterestBuilder()
-                    .withInterestDate(SampleInterestDate.builder()
-                            .withType(null)
-                            .withDate(null)
-                            .withReason(null)
-                            .build())
-                    .build())
-            .withAmount(SampleAmountBreakdown.validDefaults())
-            .build();
     }
 }
