@@ -1,7 +1,6 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
 import uk.gov.hmcts.cmc.domain.models.amount.AmountRange;
-import uk.gov.hmcts.cmc.domain.models.amount.AmountRange.AmountRangeBuilder;
 
 import java.math.BigDecimal;
 
@@ -11,9 +10,12 @@ public class SampleAmountRange {
         super();
     }
 
-    public static AmountRangeBuilder builder() {
-        return AmountRange.builder()
-            .lowerValue(BigDecimal.valueOf(100L))
-            .higherValue(BigDecimal.valueOf(99000L));
+    public static AmountRange validDefaults() {
+        AmountRange amountRange = new AmountRange();
+        amountRange.setLowerValue(BigDecimal.valueOf(100L));
+        amountRange.setHigherValue(BigDecimal.valueOf(99000L));
+
+        return amountRange;
+
     }
 }

@@ -32,6 +32,13 @@ public class SampleTimelineEvent {
     }
 
     public TimelineEvent build() {
-        return new TimelineEvent(collectionId, date, description);
+
+        TimelineEvent timelineEvent = new TimelineEvent();
+
+        timelineEvent.setDate(date);
+        timelineEvent.setDescription(description);
+        timelineEvent.setId(collectionId);
+
+        return timelineEvent;
     }
 }

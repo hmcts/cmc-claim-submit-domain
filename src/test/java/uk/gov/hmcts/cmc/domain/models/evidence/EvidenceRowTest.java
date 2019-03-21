@@ -17,7 +17,10 @@ public class EvidenceRowTest {
 
     @Test
     public void shouldBeSuccessfulValidationForCorrectEvidenceRow() {
-        EvidenceRow evidenceRow = EvidenceRow.builder().type(EXPERT_WITNESS).description("description").build();
+
+        EvidenceRow evidenceRow = new EvidenceRow();
+        evidenceRow.setType(EXPERT_WITNESS);
+        evidenceRow.setDescription("description");
 
         Set<String> response = validate(evidenceRow);
 
@@ -26,7 +29,10 @@ public class EvidenceRowTest {
 
     @Test
     public void shouldBeSuccessfulValidationForNullDescription() {
-        EvidenceRow evidenceRow = EvidenceRow.builder().type(STATEMENT_OF_ACCOUNT).description(null).build();
+
+        EvidenceRow evidenceRow = new EvidenceRow();
+        evidenceRow.setType(STATEMENT_OF_ACCOUNT);
+        evidenceRow.setDescription(null);
 
         Set<String> response = validate(evidenceRow);
 
@@ -35,7 +41,10 @@ public class EvidenceRowTest {
 
     @Test
     public void shouldBeSuccessfulValidationForEmptyDescription() {
-        EvidenceRow evidenceRow = EvidenceRow.builder().type(CONTRACTS_AND_AGREEMENTS).description("").build();
+
+        EvidenceRow evidenceRow = new EvidenceRow();
+        evidenceRow.setType(CONTRACTS_AND_AGREEMENTS);
+        evidenceRow.setDescription("");
 
         Set<String> response = validate(evidenceRow);
 
@@ -44,7 +53,10 @@ public class EvidenceRowTest {
 
     @Test
     public void shouldFailValidationForNullEvidenceType() {
-        EvidenceRow evidenceRow = EvidenceRow.builder().type(null).description("description").build();
+
+        EvidenceRow evidenceRow = new EvidenceRow();
+        evidenceRow.setType(null);
+        evidenceRow.setDescription("description");
 
         Set<String> response = validate(evidenceRow);
 
@@ -55,7 +67,12 @@ public class EvidenceRowTest {
 
     @Test
     public void shouldFailValidationForTooLongDescription() {
-        EvidenceRow evidenceRow = new EvidenceRow(UUID.randomUUID().toString(), OTHER, repeat("a", 99001));
+
+        EvidenceRow evidenceRow = new EvidenceRow();
+        evidenceRow.setId(UUID.randomUUID().toString());
+        evidenceRow.setType(OTHER);
+        evidenceRow.setDescription(repeat("a", 99001));
+
 
         Set<String> response = validate(evidenceRow);
 

@@ -8,8 +8,8 @@ import javax.validation.constraints.NotNull;
 public class HousingDisrepair {
 
     @NotNull
-    private final DamagesExpectation costOfRepairsDamages;
+    private DamagesExpectation costOfRepairsDamages;
 
-    private final DamagesExpectation otherDamages;
+    private DamagesExpectation otherDamages;
 
 }

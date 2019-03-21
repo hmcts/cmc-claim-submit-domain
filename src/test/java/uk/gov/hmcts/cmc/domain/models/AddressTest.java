@@ -1,6 +1,5 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import uk.gov.hmcts.cmc.domain.builders.SampleAddress;
@@ -16,7 +15,7 @@ public class AddressTest {
     @Test
     public void shouldBeSuccessfulValidationForCorrectAddress() {
         //given
-        Address address = SampleAddress.builder().build();
+        Address address = SampleAddress.validDefaults();
         //when
         Set<String> response = validate(address);
         //then
@@ -26,9 +25,9 @@ public class AddressTest {
     @Test
     public void shouldBeInvalidForNullLineOne() {
         //given
-        Address address = SampleAddress.builder()
-            .line1(null)
-            .build();
+        Address address = SampleAddress.validDefaults();
+        address.setLine1(null);
+
         //when
         Set<String> errors = validate(address);
         //then
@@ -40,9 +39,8 @@ public class AddressTest {
     @Test
     public void shouldBeInvalidForEmptyLineOne() {
         //given
-        Address address = SampleAddress.builder()
-            .line1("")
-            .build();
+        Address address = SampleAddress.validDefaults();
+        address.setLine1("");
         //when
         Set<String> errors = validate(address);
         //then
@@ -52,53 +50,10 @@ public class AddressTest {
     }
 
     @Test
-    public void shouldBeInvalidForTooLongLineOne() {
-        //given
-        Address address = SampleAddress.builder()
-            .line1(StringUtils.repeat("a", 101))
-            .build();
-        //when
-        Set<String> errors = validate(address);
-        //then
-        assertThat(errors)
-            .hasSize(1)
-            .contains("line1 : Address Line1 should not be longer than 100 characters");
-    }
-
-    @Test
-    public void shouldBeInvalidForTooLongLineTwo() {
-        //given
-        Address address = SampleAddress.builder()
-            .line2(StringUtils.repeat("a", 101))
-            .build();
-        //when
-        Set<String> errors = validate(address);
-        //then
-        assertThat(errors)
-            .hasSize(1)
-            .contains("line2 : Address Line2 should not be longer than 100 characters");
-    }
-
-    @Test
-    public void shouldBeInvalidForTooLongLineThree() {
-        //given
-        Address address = SampleAddress.builder()
-            .line3(StringUtils.repeat("a", 101))
-            .build();
-        //when
-        Set<String> errors = validate(address);
-        //then
-        assertThat(errors)
-            .hasSize(1)
-            .contains("line3 : Address Line3 should not be longer than 100 characters");
-    }
-
-    @Test
     public void shouldBeInvalidForEmptyCity() {
         //given
-        Address address = SampleAddress.builder()
-            .city("")
-            .build();
+        Address address = SampleAddress.validDefaults();
+        address.setCity("");
         //when
         Set<String> errors = validate(address);
         //then
@@ -108,25 +63,11 @@ public class AddressTest {
     }
 
     @Test
-    public void shouldBeInvalidForTooLongCity() {
-        //given
-        Address address = SampleAddress.builder()
-            .city(StringUtils.repeat("a", 101))
-            .build();
-        //when
-        Set<String> errors = validate(address);
-        //then
-        assertThat(errors)
-            .hasSize(1)
-            .contains("city : City should not be longer than 100 characters");
-    }
-
-    @Test
     public void shouldBeInvalidForNullPostcode() {
         //given
-        Address address = SampleAddress.builder()
-            .postcode(null)
-            .build();
+        Address address = SampleAddress.validDefaults();
+        address.setPostcode(null);
+
         //when
         Set<String> errors = validate(address);
         //then
@@ -138,9 +79,8 @@ public class AddressTest {
     @Test
     public void shouldBeInvalidForEmptyPostcode() {
         //given
-        Address address = SampleAddress.builder()
-            .postcode("")
-            .build();
+        Address address = SampleAddress.validDefaults();
+        address.setPostcode("");
         //when
         Set<String> errors = validate(address);
         //then
@@ -152,9 +92,9 @@ public class AddressTest {
     @Test
     public void shouldBeInvalidForInvalidPostcode() {
         //given
-        Address address = SampleAddress.builder()
-            .postcode("SW123456")
-            .build();
+        Address address = SampleAddress.validDefaults();
+        address.setPostcode("SW123456");
+
         //when
         Set<String> errors = validate(address);
         //then

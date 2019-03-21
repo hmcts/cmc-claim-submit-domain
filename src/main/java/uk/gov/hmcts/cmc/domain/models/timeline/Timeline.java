@@ -10,6 +10,6 @@ import javax.validation.Valid;
 public class Timeline {
 
     @Valid
-    private final List<TimelineEvent> rows;
+    private List<TimelineEvent> rows;
 
 }

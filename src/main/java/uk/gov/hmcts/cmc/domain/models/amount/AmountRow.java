@@ -17,6 +17,6 @@ public class AmountRow {
 
     @Money
     @DecimalMin(value = "0.01")
-    private final BigDecimal amount;
+    private BigDecimal amount;
 
 }

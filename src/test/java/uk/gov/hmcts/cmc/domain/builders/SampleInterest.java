@@ -86,14 +86,16 @@ public class SampleInterest {
     }
 
     public Interest build() {
-        return new Interest(
-                type,
-                interestBreakdown,
-                rate,
-                reason,
-                specificDailyAmount,
-                interestDate
-        );
+        Interest interest = new Interest();
+
+        interest.setInterestBreakdown(interestBreakdown);
+        interest.setInterestDate(interestDate);
+        interest.setRate(rate);
+        interest.setReason(reason);
+        interest.setSpecificDailyAmount(specificDailyAmount);
+        interest.setType(type);
+
+        return interest;
     }
 
 }

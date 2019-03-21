@@ -10,6 +10,6 @@ import javax.validation.Valid;
 public class Evidence {
 
     @Valid
-    private final List<EvidenceRow> rows;
+    private List<EvidenceRow> rows;
 
 }

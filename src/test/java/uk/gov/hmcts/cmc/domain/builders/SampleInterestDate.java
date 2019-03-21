@@ -67,7 +67,14 @@ public class SampleInterestDate {
     }
 
     public InterestDate build() {
-        return new InterestDate(type, date, reason, endDateType);
+
+        InterestDate interestDate = new InterestDate();
+        interestDate.setDate(date);
+        interestDate.setEndDateType(endDateType);
+        interestDate.setReason(reason);
+        interestDate.setType(type);
+
+        return interestDate;
     }
 
 }

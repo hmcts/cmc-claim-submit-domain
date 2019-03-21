@@ -1,7 +1,6 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
 import uk.gov.hmcts.cmc.domain.models.amount.AmountBreakDown;
-import uk.gov.hmcts.cmc.domain.models.amount.AmountBreakDown.AmountBreakDownBuilder;
 import uk.gov.hmcts.cmc.domain.models.amount.AmountRow;
 
 import java.math.BigDecimal;
@@ -14,8 +13,14 @@ public class SampleAmountBreakdown {
         super();
     }
 
-    public static AmountBreakDownBuilder builder() {
-        AmountRow amountRow = new AmountRow("359fda9d-e5fd-4d6e-9525-238642d0157d", "reason", new BigDecimal("40"));
-        return AmountBreakDown.builder().rows(singletonList(amountRow));
+    public static AmountBreakDown validDefaults() {
+        AmountRow amountRow = new AmountRow();
+        amountRow.setId("359fda9d-e5fd-4d6e-9525-238642d0157d");
+        amountRow.setReason("reason");
+        amountRow.setAmount(new BigDecimal("40"));
+
+        AmountBreakDown amountBreakDown = new AmountBreakDown();
+        amountBreakDown.setRows(singletonList(amountRow));
+        return amountBreakDown;
     }
 }

@@ -14,12 +14,12 @@ public class AmountRange implements Amount {
 
     @Money
     @DecimalMin(value = "0.01")
-    private final BigDecimal lowerValue;
+    private BigDecimal lowerValue;
 
     @NotNull
     @Money
     @DecimalMin(value = "0.01")
-    private final BigDecimal higherValue;
+    private BigDecimal higherValue;
 
 
 }

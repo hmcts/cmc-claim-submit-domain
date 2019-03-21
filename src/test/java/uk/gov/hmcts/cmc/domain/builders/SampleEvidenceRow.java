@@ -1,7 +1,6 @@
 package uk.gov.hmcts.cmc.domain.builders;
 
 import uk.gov.hmcts.cmc.domain.models.evidence.EvidenceRow;
-import uk.gov.hmcts.cmc.domain.models.evidence.EvidenceRow.EvidenceRowBuilder;
 
 import static uk.gov.hmcts.cmc.domain.models.evidence.EvidenceType.CORRESPONDENCE;
 
@@ -11,10 +10,12 @@ public class SampleEvidenceRow {
         super();
     }
 
-    public static EvidenceRowBuilder builder() {
-        return EvidenceRow.builder()
-            .id("d839f2f0-025f-4ee9-9a98-16bbe6ab3b35")
-            .type(CORRESPONDENCE)
-            .description("description");
+    public static EvidenceRow validDefaults() {
+        EvidenceRow evidenceRow = new EvidenceRow();
+        evidenceRow.setId("d839f2f0-025f-4ee9-9a98-16bbe6ab3b35");
+        evidenceRow.setType(CORRESPONDENCE);
+        evidenceRow.setDescription("description");
+
+        return evidenceRow;
     }
 }

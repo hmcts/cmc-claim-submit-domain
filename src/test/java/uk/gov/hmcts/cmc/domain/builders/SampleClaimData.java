@@ -24,26 +24,36 @@ import static uk.gov.hmcts.cmc.domain.builders.SampleInterest.noInterestBuilder;
 public class SampleClaimData {
 
     private UUID externalId = UUID.randomUUID();
-    private List<Party> claimants = singletonList(SampleParty.builder().individual());
-    private List<TheirDetails> defendants = singletonList(SampleTheirDetails.builder().individualDetails());
-    private Payment payment = SamplePayment.builder().build();
-    private Amount amount = SampleAmountBreakdown.builder().build();
+    private List<Party> claimants = singletonList(SampleParty.individual());
+    private List<TheirDetails> defendants = singletonList(SampleTheirDetails.individualDetails());
+    private Payment payment = SamplePayment.validDefaults();
+    private Amount amount = SampleAmountBreakdown.validDefaults();
     private Interest interest = SampleInterest.standard();
     private String reason = "reason";
     private BigInteger feeAmount = new BigInteger("4000");
     private String feeAccountNumber = "PBA1234567";
-    private StatementOfTruth statementOfTruth = new StatementOfTruth(claimants.get(0).getName(), "Director");
-    private PersonalInjury personalInjury = new PersonalInjury(DamagesExpectation.MORE_THAN_THOUSAND_POUNDS);
+    private StatementOfTruth statementOfTruth = new StatementOfTruth()
+                                                        {{
+                                                           setSignerName(claimants.get(0).getName());
+                                                           setSignerRole("Director");
+                                                        }};
+
+    private PersonalInjury personalInjury = new PersonalInjury()
+                                                        {{
+                                                            setGeneralDamages(DamagesExpectation.MORE_THAN_THOUSAND_POUNDS);
+                                                        }};
+
     private String externalReferenceNumber = "CLAIM234324";
     private String preferredCourt = "LONDON COUNTY COUNCIL";
     private String feeCode = "X0012";
     private Timeline timeline = SampleTimeline.validDefaults();
     private Evidence evidence = SampleEvidence.validDefaults();
 
-    private HousingDisrepair housingDisrepair = new HousingDisrepair(
-        DamagesExpectation.MORE_THAN_THOUSAND_POUNDS,
-        DamagesExpectation.MORE_THAN_THOUSAND_POUNDS
-    );
+    private HousingDisrepair housingDisrepair = new HousingDisrepair()
+                                                        {{
+                                                            setCostOfRepairsDamages(DamagesExpectation.MORE_THAN_THOUSAND_POUNDS);
+                                                            setOtherDamages(DamagesExpectation.MORE_THAN_THOUSAND_POUNDS);
+                                                        }};
 
     public static SampleClaimData builder() {
         return new SampleClaimData();
@@ -175,24 +185,25 @@ public class SampleClaimData {
     }
 
     public ClaimData build() {
-        return new ClaimData(
-            externalId,
-            claimants,
-            defendants,
-            payment,
-            amount,
-            feeAmount,
-            interest,
-            personalInjury,
-            housingDisrepair,
-            reason,
-            statementOfTruth,
-            feeAccountNumber,
-            externalReferenceNumber,
-            preferredCourt,
-            feeCode,
-            timeline,
-            evidence);
+        ClaimData claimData = new ClaimData();
+
+        claimData.setExternalId(externalId);
+        claimData.setClaimants(claimants);
+        claimData.setDefendants(defendants);
+        claimData.setPayment(payment);
+        claimData.setAmount(amount);
+        claimData.setInterest(interest);
+        claimData.setPersonalInjury(personalInjury);
+        claimData.setHousingDisrepair(housingDisrepair);
+        claimData.setReason(reason);
+        claimData.setStatementOfTruth(statementOfTruth);
+        claimData.setFeeAccountNumber(feeAccountNumber);
+        claimData.setExternalReferenceNumber(externalReferenceNumber);
+        claimData.setPreferredCourt(preferredCourt);
+        claimData.setTimeline(timeline);
+        claimData.setEvidence(evidence);
+
+        return claimData;
     }
 
     public static ClaimData validDefaults() {
@@ -227,7 +238,7 @@ public class SampleClaimData {
 
     public static SampleClaimData submittedByLegalRepresentativeBuilder() {
         return new SampleClaimData()
-            .withAmount(SampleAmountRange.builder().build());
+            .withAmount(SampleAmountRange.validDefaults());
     }
 
     public static ClaimData noInterest() {
@@ -240,7 +251,7 @@ public class SampleClaimData {
                             .withReason(null)
                             .build())
                     .build())
-            .withAmount(SampleAmountBreakdown.builder().build())
+            .withAmount(SampleAmountBreakdown.validDefaults())
             .build();
     }
 }

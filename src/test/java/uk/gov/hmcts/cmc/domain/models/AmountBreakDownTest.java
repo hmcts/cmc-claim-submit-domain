@@ -15,7 +15,7 @@ public class AmountBreakDownTest {
     @Test
     public void shouldBeSuccessfulValidationForFullAmountDetails() {
         //given
-        AmountBreakDown amountBreakDown = SampleAmountBreakdown.builder().build();
+        AmountBreakDown amountBreakDown = SampleAmountBreakdown.validDefaults();
         //when
         Set<String> validationMessages = validate(amountBreakDown);
         //then
@@ -25,9 +25,9 @@ public class AmountBreakDownTest {
     @Test
     public void shouldReturnValidationMessageWhenAmountBreakDownHasNullRows() {
         //given
-        AmountBreakDown amountBreakDown = SampleAmountBreakdown.builder()
-            .rows(null)
-            .build();
+        AmountBreakDown amountBreakDown = SampleAmountBreakdown.validDefaults();
+        amountBreakDown.setRows(null);
+
         //when
         Set<String> validationMessages = validate(amountBreakDown);
         //then

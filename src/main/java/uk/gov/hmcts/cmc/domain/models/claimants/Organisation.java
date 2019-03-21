@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class Organisation extends Party {
 
-    private final String contactPerson;
-    private final String companiesHouseNumber;
+    private String contactPerson;
+    private String companiesHouseNumber;
 
 }

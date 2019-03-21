@@ -11,9 +11,9 @@ public class EvidenceRow {
     private String id;
 
     @NotNull
-    private final EvidenceType type;
+    private EvidenceType type;
 
     @Size(max = 99000)
-    private final String description;
+    private String description;
 
 }

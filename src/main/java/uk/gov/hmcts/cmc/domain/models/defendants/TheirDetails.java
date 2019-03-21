@@ -13,7 +13,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  * This class and its subtypes represent the data that a person provides about the other party.
@@ -34,7 +33,6 @@ public abstract class TheirDetails {
     private String id;
 
     @NotBlank
-    @Size(max = 255, message = "may not be longer than {max} characters")
     private String name;
 
     @Valid

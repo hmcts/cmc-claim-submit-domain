@@ -23,9 +23,10 @@ public class MobilePhoneNumberValidationTest {
     }
 
     private Individual individualWithMobilePhone(String mobilePhone) {
-        return SampleParty.builder()
-            .withMobilePhone(mobilePhone)
-            .individual();
+        Individual individual = SampleParty.individual();
+        individual.setMobilePhone(mobilePhone);
+
+        return individual;
     }
 
     @Test

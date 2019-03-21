@@ -14,9 +14,8 @@ public class IndividualTest {
 
     @Test
     public void shouldNotRaiseValidationErrorWhenDateOfBirthIsNotProvided() {
-        Individual individual = SampleParty.builder()
-            .withDateOfBirth(null)
-            .individual();
+        Individual individual = SampleParty.individual();
+        individual.setDateOfBirth(null);
 
         Set<String> errorMessages = validate(individual);
 

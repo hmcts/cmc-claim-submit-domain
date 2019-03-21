@@ -15,7 +15,7 @@ public class AmountRangeTest {
     @Test
     public void shouldBeSuccessfulValidationForValidAmountDetails() {
         //given
-        AmountRange amountRow = SampleAmountRange.builder().build();
+        AmountRange amountRow = SampleAmountRange.validDefaults();
         //when
         Set<String> errors = validate(amountRow);
         //then
@@ -25,10 +25,9 @@ public class AmountRangeTest {
     @Test
     public void shouldBeSuccessfulValidationForMaximumValue() {
         //given
-        AmountRange amountRow = SampleAmountRange.builder()
-            .higherValue(valueOf(9999999.99))
-            .lowerValue(valueOf(9999999.99))
-            .build();
+        AmountRange amountRow = SampleAmountRange.validDefaults();
+        amountRow.setHigherValue(valueOf(9999999.99));
+        amountRow.setLowerValue(valueOf(9999999.99));
 
         //when
         Set<String> errors = validate(amountRow);
@@ -39,10 +38,9 @@ public class AmountRangeTest {
     @Test
     public void shouldBeSuccessfulValidationForMinimum() {
         //given
-        AmountRange amountRow = SampleAmountRange.builder()
-            .higherValue(valueOf(0.01))
-            .lowerValue(valueOf(0.01))
-            .build();
+        AmountRange amountRow = SampleAmountRange.validDefaults();
+        amountRow.setHigherValue(valueOf(0.01));
+        amountRow.setLowerValue(valueOf(0.01));
 
         //when
         Set<String> errors = validate(amountRow);
@@ -53,9 +51,9 @@ public class AmountRangeTest {
     @Test
     public void shouldHaveErrorsForValueHigherThanMaximum() {
         //given
-        AmountRange amountRow = SampleAmountRange.builder()
-            .higherValue(valueOf(10000000))
-            .build();
+        AmountRange amountRow = SampleAmountRange.validDefaults();
+        amountRow.setHigherValue(valueOf(10000000));
+
         //when
         Set<String> errors = validate(amountRow);
         //then
@@ -65,10 +63,9 @@ public class AmountRangeTest {
     @Test
     public void shouldHaveErrorsForValueLowerThanMinimum() {
         //given
-        AmountRange amountRow = SampleAmountRange.builder()
-            .higherValue(valueOf(0))
-            .lowerValue(valueOf(0))
-            .build();
+        AmountRange amountRow = SampleAmountRange.validDefaults();
+        amountRow.setHigherValue(valueOf(0));
+        amountRow.setLowerValue(valueOf(0));
 
         //when
         Set<String> errors = validate(amountRow);

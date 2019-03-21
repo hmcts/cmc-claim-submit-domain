@@ -25,6 +25,8 @@ public class SampleTimeline {
     }
 
     public Timeline build() {
-        return new Timeline(events);
+        Timeline timeline = new Timeline();
+        timeline.setRows(events);
+        return timeline;
     }
 }

@@ -12,6 +12,6 @@ public class AmountBreakDown implements Amount {
 
     @Valid
     @NotNull
-    private final List<AmountRow> rows;
+    private List<AmountRow> rows;
 
 }

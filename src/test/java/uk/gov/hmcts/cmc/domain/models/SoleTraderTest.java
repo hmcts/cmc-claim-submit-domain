@@ -14,9 +14,8 @@ public class SoleTraderTest {
 
     @Test
     public void shouldBeValidWhenBusinessNameIsNull() {
-        SoleTrader soleTrader = SampleParty.builder()
-            .withBusinessName(null)
-            .soleTrader();
+        SoleTrader soleTrader = SampleParty.soleTrader();
+        soleTrader.setBusinessName(null);
 
         Set<String> validationErrors = validate(soleTrader);
 
@@ -25,9 +24,8 @@ public class SoleTraderTest {
 
     @Test
     public void shouldBeValidWhenBusinessNameIsEmpty() {
-        SoleTrader soleTrader = SampleParty.builder()
-            .withBusinessName("")
-            .soleTrader();
+        SoleTrader soleTrader = SampleParty.soleTrader();
+        soleTrader.setBusinessName("");
 
         Set<String> validationErrors = validate(soleTrader);
 

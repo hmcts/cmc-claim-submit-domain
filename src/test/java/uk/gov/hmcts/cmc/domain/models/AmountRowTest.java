@@ -2,6 +2,7 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
+import uk.gov.hmcts.cmc.domain.builders.SampleAmountRow;
 import uk.gov.hmcts.cmc.domain.models.amount.AmountRow;
 
 import java.math.BigDecimal;
@@ -15,7 +16,7 @@ public class AmountRowTest {
     @Test
     public void shouldBeSuccessfulValidationForFullAmountDetails() {
         //given
-        AmountRow amountRow = AmountRow.builder().reason("reason").amount(new BigDecimal("40")).build();
+        AmountRow amountRow = SampleAmountRow.validDefaults();
         //when
         Set<String> errors = validate(amountRow);
         //then
@@ -25,7 +26,8 @@ public class AmountRowTest {
     @Test
     public void shouldReturnValidationMessageWhenAmountHasValueLessThanMinimum() {
         //given
-        AmountRow amountRow = AmountRow.builder().reason("reason").amount(new BigDecimal("0.00")).build();
+        AmountRow amountRow = SampleAmountRow.validDefaults();
+        amountRow.setAmount(new BigDecimal("0.00"));
         //when
         Set<String> errors = validate(amountRow);
         //then
@@ -37,7 +39,8 @@ public class AmountRowTest {
     @Test
     public void shouldBeSuccessfulValidationForFullAmountDetailsWithTwoFraction() {
         //given
-        AmountRow amountRow = AmountRow.builder().reason("reason").amount(new BigDecimal("40.50")).build();
+        AmountRow amountRow = SampleAmountRow.validDefaults();
+        amountRow.setAmount(new BigDecimal("40.50"));
         //when
         Set<String> errors = validate(amountRow);
         //then
@@ -47,7 +50,8 @@ public class AmountRowTest {
     @Test
     public void shouldReturnValidationMessageWhenAmountHasValueWithMoreThanAllowedFractions() {
         //given
-        AmountRow amountRow = AmountRow.builder().reason("reason").amount(new BigDecimal("40.123")).build();
+        AmountRow amountRow = SampleAmountRow.validDefaults();
+        amountRow.setAmount(new BigDecimal("40.521"));
         //when
         Set<String> errors = validate(amountRow);
         //then

@@ -18,7 +18,12 @@ public class SampleInterestBreakdown {
     }
 
     public InterestBreakdown build() {
-        return new InterestBreakdown(totalAmount, explanation);
+
+        InterestBreakdown interestBreakdown = new InterestBreakdown();
+        interestBreakdown.setExplanation(explanation);
+        interestBreakdown.setTotalAmount(totalAmount);
+
+        return interestBreakdown;
     }
 
     public SampleInterestBreakdown withTotalAmount(BigDecimal totalAmount) {

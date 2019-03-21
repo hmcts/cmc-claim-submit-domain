@@ -7,14 +7,13 @@ import uk.gov.hmcts.cmc.domain.builders.SampleInterest;
 import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
 import uk.gov.hmcts.cmc.domain.builders.SampleParty;
 import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
+import uk.gov.hmcts.cmc.domain.models.claimants.Individual;
+import uk.gov.hmcts.cmc.domain.models.defendants.IndividualDetails;
 import uk.gov.hmcts.cmc.domain.models.interest.Interest;
-import uk.gov.hmcts.cmc.domain.models.timeline.Timeline;
-import uk.gov.hmcts.cmc.domain.models.timeline.TimelineEvent;
 
 import java.math.BigDecimal;
 import java.util.Set;
 
-import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static uk.gov.hmcts.cmc.domain.BeanValidator.validate;
 import static uk.gov.hmcts.cmc.domain.models.interest.Interest.InterestType.STANDARD;
@@ -77,11 +76,13 @@ public class ClaimDataTest {
 
     @Test
     public void shouldBeInvalidWhenGivenInvalidDefendant() {
+        IndividualDetails individualDetails = SampleTheirDetails.individualDetails();
+        individualDetails.setName("");
+
         ClaimData claimData = SampleClaimData.builder()
-            .withDefendant(SampleTheirDetails.builder()
-                .withName("")
-                .individualDetails())
+            .withDefendant(individualDetails)
             .build();
+
 
         Set<String> errors = validate(claimData);
 
@@ -89,22 +90,10 @@ public class ClaimDataTest {
     }
 
     @Test
-    public void shouldBeInvalidWhenGivenTooManyDefendants() {
-        ClaimData claimData = SampleClaimData.builder()
-            .clearDefendants()
-            .addDefendants(SampleTheirDetails.builder().individualDetails(21))
-            .build();
-
-        Set<String> errors = validate(claimData);
-
-        assertThat(errors).containsOnly("defendants : at most 20 defendants are supported");
-    }
-
-    @Test
     public void shouldBeValidWhenGivenTwentyDefendants() {
         ClaimData claimData = SampleClaimData.builder()
             .clearDefendants()
-            .addDefendants(SampleTheirDetails.builder().individualDetails(20))
+            .addDefendants(SampleTheirDetails.individualDetails(20))
             .build();
 
         Set<String> errors = validate(claimData);
@@ -147,10 +136,11 @@ public class ClaimDataTest {
 
     @Test
     public void shouldBeInvalidWhenGivenInvalidClaimant() {
+        Individual individual = SampleParty.individual();
+        individual.setName("");
+
         ClaimData claimData = SampleClaimData.builder()
-            .withClaimant(SampleParty.builder()
-                .withName("")
-                .individual())
+            .withClaimant(individual)
             .build();
 
         Set<String> errors = validate(claimData);
@@ -160,10 +150,10 @@ public class ClaimDataTest {
 
     @Test
     public void shouldBeInvalidWhenGivenInvalidClaimantAddress() {
+        Individual individual = SampleParty.individual();
+        individual.setAddress(null);
         ClaimData claimData = SampleClaimData.builder()
-            .withClaimant(SampleParty.builder()
-                .withAddress(null)
-                .individual())
+            .withClaimant(individual)
             .build();
 
         Set<String> errors = validate(claimData);
@@ -172,22 +162,10 @@ public class ClaimDataTest {
     }
 
     @Test
-    public void shouldBeInvalidWhenGivenTooManyClaimants() {
-        ClaimData claimData = SampleClaimData.builder()
-            .clearClaimants()
-            .addClaimants(SampleParty.builder().individualDetails(21))
-            .build();
-
-        Set<String> errors = validate(claimData);
-
-        assertThat(errors).containsOnly("claimants : at most 20 claimants are supported");
-    }
-
-    @Test
     public void shouldBeValidWhenGivenTwentyClaimants() {
         ClaimData claimData = SampleClaimData.builder()
             .clearClaimants()
-            .addClaimants(SampleParty.builder().individualDetails(20))
+            .addClaimants(SampleParty.individualDetails(20))
             .build();
 
         Set<String> errors = validate(claimData);
@@ -195,16 +173,4 @@ public class ClaimDataTest {
         assertThat(errors).isEmpty();
     }
 
-    @Test
-    public void shouldBeInvalidWhenGivenTooManyTimeLineEvents() {
-        ClaimData claimData = SampleClaimData.builder()
-            .withTimeline(new Timeline(asList(new TimelineEvent[1001])))
-            .build();
-
-        Set<String> errors = validate(claimData);
-
-        assertThat(errors)
-            .hasSize(1)
-            .containsOnly("timeline.events : size must be between 1 and 1000");
-    }
 }

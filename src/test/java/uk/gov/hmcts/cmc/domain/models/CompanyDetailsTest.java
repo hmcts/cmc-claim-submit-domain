@@ -14,9 +14,8 @@ public class CompanyDetailsTest {
 
     @Test
     public void shouldBeValidWhenGivenNullContactPerson() {
-        CompanyDetails companyDetails = SampleTheirDetails.builder()
-            .withContactPerson(null)
-            .companyDetails();
+        CompanyDetails companyDetails = SampleTheirDetails.companyDetails();
+        companyDetails.setContactPerson(null);
 
         Set<String> validationErrors = validate(companyDetails);
 
@@ -25,9 +24,8 @@ public class CompanyDetailsTest {
 
     @Test
     public void shouldBeValidWhenGivenEmptyContactPerson() {
-        CompanyDetails companyDetails = SampleTheirDetails.builder()
-            .withContactPerson("")
-            .companyDetails();
+        CompanyDetails companyDetails = SampleTheirDetails.companyDetails();
+        companyDetails.setContactPerson("");
 
         Set<String> validationErrors = validate(companyDetails);
 

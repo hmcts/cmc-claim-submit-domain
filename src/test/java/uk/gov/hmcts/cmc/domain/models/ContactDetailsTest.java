@@ -1,6 +1,5 @@
 package uk.gov.hmcts.cmc.domain.models;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import uk.gov.hmcts.cmc.domain.builders.SampleContactDetails;
@@ -15,7 +14,7 @@ public class ContactDetailsTest {
 
     @Test
     public void shouldBeValidForValidObject() {
-        ContactDetails contactDetails = SampleContactDetails.builder().build();
+        ContactDetails contactDetails = SampleContactDetails.validDefaults();
 
         Set<String> validationErrors = validate(contactDetails);
 
@@ -24,11 +23,10 @@ public class ContactDetailsTest {
 
     @Test
     public void shouldBeValidForNullValues() {
-        ContactDetails contactDetails = SampleContactDetails.builder()
-            .phone(null)
-            .email(null)
-            .dxAddress(null)
-            .build();
+        ContactDetails contactDetails = SampleContactDetails.validDefaults();
+        contactDetails.setPhone(null);
+        contactDetails.setEmail(null);
+        contactDetails.setDxAddress(null);
 
         Set<String> validationErrors = validate(contactDetails);
 
@@ -36,11 +34,10 @@ public class ContactDetailsTest {
     }
 
     @Test
-    public void shouldBeValidForEmptyValues() {
-        ContactDetails contactDetails = SampleContactDetails.builder()
-            .email("")
-            .dxAddress("")
-            .build();
+    public void shouldBeValidForEmptyEmailAndDxAddressValues() {
+        ContactDetails contactDetails = SampleContactDetails.validDefaults();
+        contactDetails.setEmail("");
+        contactDetails.setDxAddress("");
 
         Set<String> validationErrors = validate(contactDetails);
 
@@ -49,9 +46,8 @@ public class ContactDetailsTest {
 
     @Test
     public void phoneNumberShouldNotBeValidForEmptyValue() {
-        ContactDetails contactDetails = SampleContactDetails.builder()
-            .phone("")
-            .build();
+        ContactDetails contactDetails = SampleContactDetails.validDefaults();
+        contactDetails.setPhone("");
 
         Set<String> validationErrors = validate(contactDetails);
 
@@ -60,9 +56,8 @@ public class ContactDetailsTest {
 
     @Test
     public void shouldBeInvalidForInvalidPhoneNumber() {
-        ContactDetails contactDetails = SampleContactDetails.builder()
-            .phone("123")
-            .build();
+        ContactDetails contactDetails = SampleContactDetails.validDefaults();
+        contactDetails.setPhone("123");
 
         Set<String> validationErrors = validate(contactDetails);
 
@@ -71,35 +66,12 @@ public class ContactDetailsTest {
 
     @Test
     public void shouldBeInvalidForInvalidEmail() {
-        ContactDetails contactDetails = SampleContactDetails.builder()
-            .email("this is not a valid email")
-            .build();
+        ContactDetails contactDetails = SampleContactDetails.validDefaults();
+        contactDetails.setEmail("this is not a valid email");
 
         Set<String> validationErrors = validate(contactDetails);
 
         assertThat(validationErrors).containsOnly("email : must be a well-formed email address");
-    }
-
-    @Test
-    public void shouldBeValidFor255CharsDxNumber() {
-        ContactDetails contactDetails = SampleContactDetails.builder()
-            .dxAddress(StringUtils.repeat("X", 255))
-            .build();
-
-        Set<String> validationErrors = validate(contactDetails);
-
-        assertThat(validationErrors).isEmpty();
-    }
-
-    @Test
-    public void shouldBeInvalidForTooLongDxNumber() {
-        ContactDetails contactDetails = SampleContactDetails.builder()
-            .dxAddress(StringUtils.repeat("X", 256))
-            .build();
-
-        Set<String> validationErrors = validate(contactDetails);
-
-        assertThat(validationErrors).containsOnly("dxAddress : must be at most 255 characters");
     }
 
 }

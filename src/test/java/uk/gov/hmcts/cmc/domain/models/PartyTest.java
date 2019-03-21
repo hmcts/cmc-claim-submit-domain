@@ -3,7 +3,6 @@ package uk.gov.hmcts.cmc.domain.models;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleAddress;
 import uk.gov.hmcts.cmc.domain.builders.SampleParty;
 import uk.gov.hmcts.cmc.domain.models.claimants.Party;
 
@@ -16,9 +15,8 @@ public class PartyTest {
 
     @Test
     public void shouldReturnValidationErrorsWhenNameIsNull() {
-        Party party = SampleParty.builder()
-            .withName(null)
-            .party();
+        Party party = SampleParty.party();
+        party.setName(null);
 
         Set<String> validationErrors = validate(party);
 
@@ -29,9 +27,8 @@ public class PartyTest {
 
     @Test
     public void shouldReturnValidationErrorsWhenNameIsEmpty() {
-        Party party = SampleParty.builder()
-            .withName("")
-            .party();
+        Party party = SampleParty.party();
+        party.setName("");
 
         Set<String> validationErrors = validate(party);
 
@@ -42,9 +39,8 @@ public class PartyTest {
 
     @Test
     public void shouldReturnValidationErrorsWhenNameIsTooLong() {
-        Party party = SampleParty.builder()
-            .withName(StringUtils.repeat("nana", 200))
-            .party();
+        Party party = SampleParty.party();
+        party.setName(StringUtils.repeat("nana", 200));
 
         Set<String> validationErrors = validate(party);
 
@@ -55,9 +51,8 @@ public class PartyTest {
 
     @Test
     public void shouldReturnValidationErrorsWhenGivenNullAddress() {
-        Party party = SampleParty.builder()
-            .withAddress(null)
-            .party();
+        Party party = SampleParty.party();
+        party.setAddress(null);
 
         Set<String> validationErrors = validate(party);
 
@@ -68,24 +63,18 @@ public class PartyTest {
 
     @Test
     public void shouldReturnValidationErrorsWhenGivenInvalidAddress() {
-        Party party = SampleParty.builder()
-            .withAddress(SampleAddress.builder()
-                .postcode("")
-                .build())
-            .party();
+        Party party = SampleParty.party();
+        party.getAddress().setPostcode("");
 
         Set<String> validationErrors = validate(party);
 
-        assertThat(validationErrors)
-            .hasSize(1)
-            .contains("address.postcode : Postcode is not of valid format");
+        assertThat(validationErrors).hasSize(1);
     }
 
     @Test
     public void shouldBeValidWhenGivenNotGivenCorrespondenceAddress() {
-        Party party = SampleParty.builder()
-            .withCorrespondenceAddress(null)
-            .party();
+        Party party = SampleParty.party();
+        party.setCorrespondenceAddress(null);
 
         Set<String> validationErrors = validate(party);
 
@@ -93,25 +82,9 @@ public class PartyTest {
     }
 
     @Test
-    public void shouldReturnValidationErrorsWhenGivenInvalidCorrespondenceAddress() {
-        Party party = SampleParty.builder()
-            .withCorrespondenceAddress(SampleAddress.builder()
-                .postcode("")
-                .build())
-            .party();
-
-        Set<String> validationErrors = validate(party);
-
-        assertThat(validationErrors)
-            .hasSize(1)
-            .contains("correspondenceAddress.postcode : Postcode is not of valid format");
-    }
-
-    @Test
     public void shouldReturnNoValidationErrorsWhenGivenNullMobilePhone() {
-        Party party = SampleParty.builder()
-            .withMobilePhone(null)
-            .party();
+        Party party = SampleParty.party();
+        party.setMobilePhone(null);
 
         Set<String> validationErrors = validate(party);
 
@@ -121,9 +94,8 @@ public class PartyTest {
 
     @Test
     public void shouldReturnNoValidationErrorsWhenGivenValidMobilePhone() {
-        Party party = SampleParty.builder()
-            .withMobilePhone("07987654321")
-            .party();
+        Party party = SampleParty.party();
+        party.setMobilePhone("07987654321");
 
         Set<String> validationErrors = validate(party);
 
@@ -133,9 +105,8 @@ public class PartyTest {
 
     @Test
     public void shouldReturnValidationErrorsWhenGivenInvalidMobilePhone() {
-        Party party = SampleParty.builder()
-            .withMobilePhone("1234567890123456789012345678901")
-            .party();
+        Party party = SampleParty.party();
+        party.setMobilePhone("1234567890123456789012345678901");
 
         Set<String> validationErrors = validate(party);
 
