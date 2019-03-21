@@ -68,22 +68,18 @@
     "date_created": "2019-01-01"
   },
   "reason": "reason",
-  "timeline": {
-    "rows": [
-      {
-        "id": "359fda9d-e5fd-4d6e-9525-238642d0157d",
-        "date": "Last Year",
-        "description": "signed a contract"
-      }
-    ]
-  },
-  "evidence": {
-    "rows": [
-      {
-        "id": "d839f2f0-025f-4ee9-9a98-16bbe6ab3b35",
-        "type": "CORRESPONDENCE",
-        "description": "description"
-      }
-    ]
-  }
+  "timeline": [
+	{
+	  "id": "359fda9d-e5fd-4d6e-9525-238642d0157d",
+	  "date": "Last Year",
+	  "description": "signed a contract"
+	}
+  ],
+  "evidences": [
+    {
+      "id": "d839f2f0-025f-4ee9-9a98-16bbe6ab3b35",
+      "type": "CORRESPONDENCE",
+      "description": "description"
+    }
+  ]
 }

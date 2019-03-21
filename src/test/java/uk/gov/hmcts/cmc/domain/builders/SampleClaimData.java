@@ -10,9 +10,10 @@ import uk.gov.hmcts.cmc.domain.models.interest.Interest;
 import uk.gov.hmcts.cmc.domain.models.particulars.HousingDisrepair;
 import uk.gov.hmcts.cmc.domain.models.particulars.PersonalInjury;
 import uk.gov.hmcts.cmc.domain.models.payment.Payment;
-import uk.gov.hmcts.cmc.domain.models.timeline.Timeline;
+import uk.gov.hmcts.cmc.domain.models.timeline.TimelineEvent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,8 +33,8 @@ public class SampleClaimData {
     private PersonalInjury personalInjury = SamplePersonalInjury.validDefaults();
     private String externalReferenceNumber = "CLAIM234324";
     private String preferredCourt = "LONDON COUNTY COUNCIL";
-    private Timeline timeline = SampleTimeline.validDefaults();
-    private Evidence evidence = SampleEvidence.validDefaults();
+    private List<TimelineEvent> timeline = Arrays.asList(SampleTimelineEvent.validDefaults());
+    private List<Evidence> evidence = Arrays.asList(SampleEvidence.validDefaults());
 
     private HousingDisrepair housingDisrepair = SampleHousingDisrepair.validDefaults();
 
@@ -146,13 +147,13 @@ public class SampleClaimData {
         return this;
     }
 
-    public SampleClaimData withTimeline(Timeline timeline) {
-        this.timeline = timeline;
+    public SampleClaimData addTimeline(TimelineEvent timeline) {
+        this.timeline.add(timeline);
         return this;
     }
 
-    public SampleClaimData withEvidence(Evidence evidence) {
-        this.evidence = evidence;
+    public SampleClaimData addEvidence(Evidence evidence) {
+        this.evidence.add(evidence);
         return this;
     }
 
@@ -173,7 +174,7 @@ public class SampleClaimData {
         claimData.setExternalReferenceNumber(externalReferenceNumber);
         claimData.setPreferredCourt(preferredCourt);
         claimData.setTimeline(timeline);
-        claimData.setEvidence(evidence);
+        claimData.setEvidences(evidence);
 
         return claimData;
     }

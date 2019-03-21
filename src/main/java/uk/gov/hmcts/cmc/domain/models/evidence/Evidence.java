@@ -2,14 +2,18 @@ package uk.gov.hmcts.cmc.domain.models.evidence;
 
 import lombok.Data;
 
-import java.util.List;
-
-import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 public class Evidence {
 
-    @Valid
-    private List<EvidenceRow> rows;
+    private String id;
+
+    @NotNull
+    private EvidenceType type;
+
+    @Size(max = 99000)
+    private String description;
 
 }

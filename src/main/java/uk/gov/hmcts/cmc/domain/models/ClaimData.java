@@ -11,7 +11,7 @@ import uk.gov.hmcts.cmc.domain.models.interest.Interest;
 import uk.gov.hmcts.cmc.domain.models.particulars.HousingDisrepair;
 import uk.gov.hmcts.cmc.domain.models.particulars.PersonalInjury;
 import uk.gov.hmcts.cmc.domain.models.payment.Payment;
-import uk.gov.hmcts.cmc.domain.models.timeline.Timeline;
+import uk.gov.hmcts.cmc.domain.models.timeline.TimelineEvent;
 
 import java.util.List;
 import java.util.UUID;
@@ -54,10 +54,10 @@ public class ClaimData {
     private HousingDisrepair housingDisrepair;
 
     @Valid
-    private Timeline timeline;
+    private List<TimelineEvent> timeline;
 
     @Valid
-    private Evidence evidence;
+    private List<Evidence> evidences;
 
     @NotBlank
     private String reason;
