@@ -1,28 +1,16 @@
 package uk.gov.hmcts.cmc.domain.models.payment;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import lombok.Data;
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes(
+    {
+        @JsonSubTypes.Type(value = ReferencePayment.class, name = "referencePayment"),
+        @JsonSubTypes.Type(value = AccountPayment.class, name = "accountPayment")
+    }
+)
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-@Data
-public class Payment {
-
-    private String id;
-
-    @NotNull
-    private BigDecimal amount;
-
-    @NotBlank
-    private String reference;
-
-    @JsonProperty("date_created")
-    private String dateCreated;
-
-    private String status;
+public interface Payment {
 
 }

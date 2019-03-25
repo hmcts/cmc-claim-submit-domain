@@ -21,7 +21,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
 @Data
 public class ClaimData {
 
@@ -64,10 +63,6 @@ public class ClaimData {
 
     @Valid
     private StatementOfTruth statementOfTruth;
-
-    private String feeAccountNumber;
-
-    private String externalReferenceNumber;
 
     private String preferredCourt;
 

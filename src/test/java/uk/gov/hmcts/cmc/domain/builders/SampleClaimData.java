@@ -28,10 +28,8 @@ public class SampleClaimData {
     private Amount amount = SampleAmountBreakdown.validDefaults();
     private Interest interest = SampleInterest.standard();
     private String reason = "reason";
-    private String feeAccountNumber = "PBA1234567";
     private StatementOfTruth statementOfTruth = SampleStatementOfTruth.validDefaults();
     private PersonalInjury personalInjury = SamplePersonalInjury.validDefaults();
-    private String externalReferenceNumber = "CLAIM234324";
     private String preferredCourt = "LONDON COUNTY COUNCIL";
     private List<TimelineEvent> timeline = Arrays.asList(SampleTimelineEvent.validDefaults());
     private List<Evidence> evidence = Arrays.asList(SampleEvidence.validDefaults());
@@ -127,16 +125,6 @@ public class SampleClaimData {
         return this;
     }
 
-    public SampleClaimData withFeeAccountNumber(String feeAccountNumber) {
-        this.feeAccountNumber = feeAccountNumber;
-        return this;
-    }
-
-    public SampleClaimData withExternalReferenceNumber(String externalReferenceNumber) {
-        this.externalReferenceNumber = externalReferenceNumber;
-        return this;
-    }
-
     public SampleClaimData withPreferredCourt(String preferredCourt) {
         this.preferredCourt = preferredCourt;
         return this;
@@ -170,8 +158,6 @@ public class SampleClaimData {
         claimData.setHousingDisrepair(housingDisrepair);
         claimData.setReason(reason);
         claimData.setStatementOfTruth(statementOfTruth);
-        claimData.setFeeAccountNumber(feeAccountNumber);
-        claimData.setExternalReferenceNumber(externalReferenceNumber);
         claimData.setPreferredCourt(preferredCourt);
         claimData.setTimeline(timeline);
         claimData.setEvidences(evidence);
