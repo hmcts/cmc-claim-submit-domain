@@ -3,8 +3,8 @@ package uk.gov.hmcts.cmc.domain.models;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleParty;
 import uk.gov.hmcts.cmc.domain.models.claimants.Party;
+import uk.gov.hmcts.cmc.domain.samples.SampleParty;
 
 import java.util.Set;
 

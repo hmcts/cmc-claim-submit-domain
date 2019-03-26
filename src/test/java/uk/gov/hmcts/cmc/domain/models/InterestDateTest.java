@@ -2,9 +2,9 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
 import uk.gov.hmcts.cmc.domain.models.interest.InterestDate;
 import uk.gov.hmcts.cmc.domain.models.interest.InterestDate.InterestEndDateType;
+import uk.gov.hmcts.cmc.domain.samples.SampleInterestDate;
 
 import java.time.LocalDate;
 import java.util.Set;

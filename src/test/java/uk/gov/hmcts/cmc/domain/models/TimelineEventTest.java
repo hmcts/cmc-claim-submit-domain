@@ -2,8 +2,8 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleTimelineEvent;
 import uk.gov.hmcts.cmc.domain.models.timeline.TimelineEvent;
+import uk.gov.hmcts.cmc.domain.samples.SampleTimelineEvent;
 
 import java.util.Set;
 

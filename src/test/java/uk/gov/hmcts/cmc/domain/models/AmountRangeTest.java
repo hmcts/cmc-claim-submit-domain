@@ -2,8 +2,8 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleAmountRange;
 import uk.gov.hmcts.cmc.domain.models.amount.AmountRange;
+import uk.gov.hmcts.cmc.domain.samples.SampleAmountRange;
 
 import java.util.Set;
 

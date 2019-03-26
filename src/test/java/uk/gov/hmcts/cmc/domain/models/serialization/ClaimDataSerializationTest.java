@@ -4,14 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleClaimData;
-import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
-import uk.gov.hmcts.cmc.domain.builders.SampleParty;
-import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.config.JacksonConfiguration;
 import uk.gov.hmcts.cmc.domain.models.ClaimData;
 import uk.gov.hmcts.cmc.domain.models.claimants.Individual;
 import uk.gov.hmcts.cmc.domain.models.defendants.IndividualDetails;
+import uk.gov.hmcts.cmc.domain.samples.SampleClaimData;
+import uk.gov.hmcts.cmc.domain.samples.SampleInterestDate;
+import uk.gov.hmcts.cmc.domain.samples.SampleParty;
+import uk.gov.hmcts.cmc.domain.samples.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.utils.ResourceReader;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static uk.gov.hmcts.cmc.domain.builders.SampleInterest.standardInterestBuilder;
+import static uk.gov.hmcts.cmc.domain.samples.SampleInterest.standardInterestBuilder;
 
 public class ClaimDataSerializationTest {
 

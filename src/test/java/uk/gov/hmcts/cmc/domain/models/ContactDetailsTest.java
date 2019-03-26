@@ -2,8 +2,8 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleContactDetails;
 import uk.gov.hmcts.cmc.domain.models.common.ContactDetails;
+import uk.gov.hmcts.cmc.domain.samples.SampleContactDetails;
 
 import java.util.Set;
 

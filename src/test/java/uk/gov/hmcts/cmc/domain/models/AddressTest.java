@@ -2,8 +2,8 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleAddress;
 import uk.gov.hmcts.cmc.domain.models.common.Address;
+import uk.gov.hmcts.cmc.domain.samples.SampleAddress;
 
 import java.util.Set;
 

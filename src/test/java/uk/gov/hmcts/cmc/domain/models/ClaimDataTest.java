@@ -2,14 +2,14 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleClaimData;
-import uk.gov.hmcts.cmc.domain.builders.SampleInterest;
-import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
-import uk.gov.hmcts.cmc.domain.builders.SampleParty;
-import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.models.claimants.Individual;
 import uk.gov.hmcts.cmc.domain.models.defendants.IndividualDetails;
 import uk.gov.hmcts.cmc.domain.models.interest.Interest;
+import uk.gov.hmcts.cmc.domain.samples.SampleClaimData;
+import uk.gov.hmcts.cmc.domain.samples.SampleInterest;
+import uk.gov.hmcts.cmc.domain.samples.SampleInterestDate;
+import uk.gov.hmcts.cmc.domain.samples.SampleParty;
+import uk.gov.hmcts.cmc.domain.samples.SampleTheirDetails;
 
 import java.math.BigDecimal;
 import java.util.Set;

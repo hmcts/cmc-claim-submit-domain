@@ -2,8 +2,8 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleAmountRow;
 import uk.gov.hmcts.cmc.domain.models.amount.AmountRow;
+import uk.gov.hmcts.cmc.domain.samples.SampleAmountRow;
 
 import java.math.BigDecimal;
 import java.util.Set;

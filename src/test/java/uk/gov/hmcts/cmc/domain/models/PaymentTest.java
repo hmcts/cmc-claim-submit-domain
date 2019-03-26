@@ -2,8 +2,8 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SamplePayment;
 import uk.gov.hmcts.cmc.domain.models.payment.Payment;
+import uk.gov.hmcts.cmc.domain.samples.SamplePayment;
 
 import java.util.Set;
 

@@ -2,11 +2,11 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleInterest;
-import uk.gov.hmcts.cmc.domain.builders.SampleInterestBreakdown;
-import uk.gov.hmcts.cmc.domain.builders.SampleInterestDate;
 import uk.gov.hmcts.cmc.domain.models.interest.Interest;
 import uk.gov.hmcts.cmc.domain.models.interest.InterestDate;
+import uk.gov.hmcts.cmc.domain.samples.SampleInterest;
+import uk.gov.hmcts.cmc.domain.samples.SampleInterestBreakdown;
+import uk.gov.hmcts.cmc.domain.samples.SampleInterestDate;
 
 import java.math.BigDecimal;
 import java.util.Set;

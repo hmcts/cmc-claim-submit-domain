@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.builders;
+package uk.gov.hmcts.cmc.domain.samples;
 
 import uk.gov.hmcts.cmc.domain.models.common.Address;
 import uk.gov.hmcts.cmc.domain.models.common.Representative;

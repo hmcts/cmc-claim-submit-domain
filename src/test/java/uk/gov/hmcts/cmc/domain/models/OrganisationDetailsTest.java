@@ -2,8 +2,8 @@ package uk.gov.hmcts.cmc.domain.models;
 
 import org.junit.Test;
 
-import uk.gov.hmcts.cmc.domain.builders.SampleTheirDetails;
 import uk.gov.hmcts.cmc.domain.models.defendants.OrganisationDetails;
+import uk.gov.hmcts.cmc.domain.samples.SampleTheirDetails;
 
 import java.util.Set;
 
