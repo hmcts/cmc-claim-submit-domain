@@ -1,4 +1,4 @@
-package uk.gov.hmcts.cmc.domain.models;
+package uk.gov.hmcts.cmc.domain.models.claimants;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
